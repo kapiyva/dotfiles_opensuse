@@ -4,10 +4,10 @@ This repository is made for openSUSE.
 github cliをインストール   
 `https://github.com/cli/cli/blob/trunk/docs/install_linux.md`
 
-`dotfiles`をクローン
+`dotfiles`をクローン  
 `gh repo clone kapiyva/dotfiles ~/dotfiles`
 
-インストールスクリプトを実行
+インストールスクリプトを実行  
 `sudo chmod +x ~/dotfiles/install.sh && ~/dotfiles/install.sh`
 
 # 手動インストール対象
