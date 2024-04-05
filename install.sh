@@ -1,8 +1,8 @@
 # install tools
-sudo zypper in neovim
-sudo zypper in eza
-sudo zypper in bat
-sudo zypper in starship
+sudo zypper in -y neovim
+sudo zypper in -y eza
+sudo zypper in -y bat
+sudo zypper in -y starship
 
 # replace dotfiles
 mv ~/.bashrc ~/.bashrc_bk
