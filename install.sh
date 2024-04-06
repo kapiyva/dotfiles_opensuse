@@ -1,4 +1,5 @@
 # install tools
+sudo zypper in -y --type pattern devel_basis
 sudo zypper in -y neovim
 sudo zypper in -y eza
 sudo zypper in -y bat
