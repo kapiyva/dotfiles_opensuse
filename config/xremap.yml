@@ -1,0 +1,16 @@
+modmap:
+  - remap:
+      LeftCtrl: LeftAlt
+      LeftAlt: LeftCtrl
+      RightCtrl: RightAlt
+      RightAlt: RightCtrl
+      Space: [Shift_L, Space]
+   
+virtual_modifiers:
+  - Esc
+keymap:
+  - remap:
+      Esc-h: Left
+      Esc-j: Up
+      Esc-k: Down
+      Esc-l: Right
