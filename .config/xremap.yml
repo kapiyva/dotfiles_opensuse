@@ -1,8 +1,10 @@
 modmap:
   - remap:
       LeftCtrl: LeftAlt
+      Muhenkan: [LeftCtrl, Muhenkan]
       LeftAlt: [LeftCtrl, Muhenkan]
       RightCtrl: RightAlt
+      Henkan: [RightCtrl, Henkan]
       RightAlt: [RightCtrl, Henkan]
       Space: [Shift_L, Space]
 virtual_modifiers:
