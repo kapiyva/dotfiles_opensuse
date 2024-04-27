@@ -17,3 +17,5 @@ ln -s ~/dotfiles/.gitconfig ~
 
 mkdir .config
 gh repo clone kapiyva/neovim_config ~/.config/nvim
+
+ln -s ~/dotfiles/.config/xremap.yml ~/.config
