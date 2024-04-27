@@ -5,12 +5,12 @@ modmap:
       RightCtrl: RightAlt
       RightAlt: RightCtrl
       Space: [Shift_L, Space]
-   
 virtual_modifiers:
-  - Esc
+  - CapsLock
 keymap:
   - remap:
-      Esc-h: Left
-      Esc-j: Up
-      Esc-k: Down
-      Esc-l: Right
+      CapsLock-e: Esc
+      CapsLock-h: Left
+      CapsLock-j: Down
+      CapsLock-k: Up
+      CapsLock-l: Right
