@@ -1,9 +1,9 @@
 modmap:
   - remap:
       LeftCtrl: LeftAlt
-      LeftAlt: LeftCtrl
+      LeftAlt: [LeftCtrl, Muhenkan]
       RightCtrl: RightAlt
-      RightAlt: RightCtrl
+      RightAlt: [RightCtrl, Henkan]
       Space: [Shift_L, Space]
 virtual_modifiers:
   - CapsLock
