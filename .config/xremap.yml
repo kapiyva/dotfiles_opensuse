@@ -7,11 +7,11 @@ modmap:
       Henkan: [RightCtrl, Henkan]
       RightAlt: [RightCtrl, Henkan]
       Space: [Shift_L, Space]
+      CapsLock: [CapsLock, Esc]
 virtual_modifiers:
   - CapsLock
 keymap:
   - remap:
-      CapsLock-e: Esc
       CapsLock-h: Left
       CapsLock-j: Down
       CapsLock-k: Up
