@@ -31,6 +31,6 @@ github cliをインストール
 `cargo install xremap --features kde`
 
 2. systemdに登録
-- ファイルの作成
-- サービスの起動
-- .profileにサービス起動の設定追加
+  - サービスファイルの作成
+  - サービスの起動
+  - .profileにサービス起動の設定追加
