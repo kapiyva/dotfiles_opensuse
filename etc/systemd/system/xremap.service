@@ -1,0 +1,11 @@
+[Unit]
+Sescription = remap keys for happy keyboard life
+
+[Service]
+ExecStart = /home/kapiyva/.cargo/bin/xremap /home/kapiyva/.config/xremap.yml
+Restart = always
+User = root
+Group = root
+
+[Install]
+WantedBy=default.target
