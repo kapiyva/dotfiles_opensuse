@@ -1,3 +1,5 @@
+# add repository
+sudo zypper ar https://download.opensuse.org/repositories/devel:/languages:/go/openSUSE_Factory/devel:languages:go.repo
 # install tools
 sudo zypper in -y --type pattern devel_basis
 sudo zypper in -y neovim
