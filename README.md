@@ -24,13 +24,4 @@ github cliをインストール
 ---
 
 # for Desktop
-
-## xremap
-
-1. `xremap`のインストール
-`cargo install xremap --features kde`
-
-2. systemdに登録
-  - サービスファイルの作成
-  - サービスの起動
-  - .profileにサービス起動の設定追加
+`sudo chmod +x ~/dotfiles/install_desktop.sh && ~/dotfiles/install_desktop.sh`
