@@ -12,6 +12,7 @@
 
 test -s ~/.alias && . ~/.alias || true
 export MYVIMRC="$HOME/.config/nvim/"
+export LANG="ja_JP.UTF-8"
 
 # starship
 eval "$(starship init bash)"
