@@ -1,5 +1,6 @@
 modmap:
-  - remap:
+  - name: Default
+    remap:
       LeftCtrl: LeftAlt
       Muhenkan: [LeftCtrl, Muhenkan]
       LeftAlt: [LeftCtrl, Muhenkan]
@@ -10,7 +11,8 @@ modmap:
       CapsLock: [CapsLock, Esc]
     device:
       not: ['Apple']
-  - remap:
+  - name: Mac
+    remap:
       LeftMeta: [LeftCtrl, Muhenkan]
       LeftAlt: LeftMeta
       LeftCtrl: LeftAlt
