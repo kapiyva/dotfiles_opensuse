@@ -8,6 +8,18 @@ modmap:
       RightAlt: [RightCtrl, Henkan]
       Space: [Shift_L, Space]
       CapsLock: [CapsLock, Esc]
+    device:
+      not: ['Apple']
+  - remap:
+      LeftMeta: [LeftCtrl, Muhenkan]
+      LeftAlt: LeftMeta
+      LeftCtrl: LeftAlt
+      RightMeta: [RightCtrl, Henkan]
+      RightAlt: RightMeta
+      Space: [Shift_L, Space]
+      CapsLock: [CapsLock, Esc]
+    device:
+      only: ['Apple']
 virtual_modifiers:
   - CapsLock
 keymap:
