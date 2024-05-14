@@ -24,4 +24,7 @@ github cliをインストール
 ---
 
 # for Desktop
+
+手動インストールまで完了後、下記のコマンドを実行することでデスクトップ向けのセットアップを行う
+
 `sudo chmod +x ~/dotfiles/install_desktop.sh && ~/dotfiles/install_desktop.sh`
