@@ -6,6 +6,7 @@ sudo zypper in -y neovim
 sudo zypper in -y eza
 sudo zypper in -y bat
 sudo zypper in -y starship
+sudo zypper in -y ripgrep
 sudo zypper in -y lazygit
 
 # replace dotfiles
