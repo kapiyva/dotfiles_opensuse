@@ -2,6 +2,7 @@
 sudo zypper ar https://download.opensuse.org/repositories/devel:/languages:/go/openSUSE_Factory/devel:languages:go.repo
 # install tools
 sudo zypper in -y --type pattern devel_basis
+sudo zypper in -y flatpak
 sudo zypper in -y neovim
 sudo zypper in -y eza
 sudo zypper in -y bat
@@ -23,3 +24,6 @@ mkdir .config
 gh repo clone kapiyva/neovim_config ~/.config/nvim
 
 ln -s ~/dotfiles/.config/xremap.yml ~/.config
+
+# add flathub
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
