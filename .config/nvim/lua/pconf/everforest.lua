@@ -1,4 +1,4 @@
-require('everforest').setup{
+require('everforest').setup {
   background = 'hard',
 }
 

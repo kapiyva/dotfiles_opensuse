@@ -1,3 +1,3 @@
-require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
 
-vim.keymap.set('n','<leader>w',':HopWord<CR>')
+vim.keymap.set('n', '<leader>w', ':HopWord<CR>')

@@ -12,4 +12,3 @@ keymap("i", "<C-j>", "<Plug>(copilot-next)")
 keymap("i", "<C-k>", "<Plug>(copilot-previous)")
 keymap("i", "<C-o>", "<Plug>(copilot-dismiss)")
 keymap("i", "<C-s>", "<Plug>(copilot-suggest)")
-

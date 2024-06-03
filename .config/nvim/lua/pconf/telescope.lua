@@ -11,7 +11,7 @@ require('telescope').setup({
       prefer_locations = true,
     },
     media_files = {
-      filetypes = {"png","jpg","jpeg","svg"}
+      filetypes = { "png", "jpg", "jpeg", "svg" }
     }
   }
 })
@@ -26,4 +26,3 @@ vim.keymap.set('n', '<leader>fk', builtin.keymaps, {})
 vim.keymap.set('n', '<leader>fd', ":Telescope coc workspace_diagnostics<cr>", {})
 vim.keymap.set('n', '<leader>fs', builtin.git_status, {})
 vim.keymap.set('n', '<leader>fm', ":Telescope media_files<cr>", {})
-
