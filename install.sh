@@ -10,6 +10,7 @@ sudo zypper in -y bat
 sudo zypper in -y starship
 sudo zypper in -y ripgrep
 sudo zypper in -y lazygit
+sudo zypper in -y fd
 
 # add flathub
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
