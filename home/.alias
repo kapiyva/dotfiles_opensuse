@@ -1,4 +1,5 @@
 alias vi='nvim'
+alias vimconf='nvim -c "cd ~/dotfiles/.config/nvim | e init.lua"'
 alias ls='eza --icons'
 alias la='eza --icons --all'
 alias ll='eza --icons --all --long --group'
