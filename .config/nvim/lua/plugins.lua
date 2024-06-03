@@ -4,7 +4,7 @@ return {
     "neoclide/coc.nvim",
     branch = "release",
     event = "UIEnter",
-    config = function ()
+    config = function()
       -- extentions
       vim.g.coc_global_extensions = {
         'coc-json',
@@ -12,7 +12,6 @@ return {
         'coc-eslint',
         'coc-prettier',
         'coc-rust-analyzer',
-        'coc-lua',
       }
       --config
       require("pconf.coc")
@@ -22,7 +21,7 @@ return {
   -- ファジーファインダー
   {
     "nvim-telescope/telescope.nvim",
-    dependencies = {"nvim-lua/plenary.nvim"},
+    dependencies = { "nvim-lua/plenary.nvim" },
     keys = { "<leader>f" },
     config = function()
       require("pconf.telescope")
@@ -42,7 +41,7 @@ return {
     "nvim-tree/nvim-tree.lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = { "<leader>e" },
-    config = function ()
+    config = function()
       require("pconf.nvim-tree")
     end,
   },
@@ -57,7 +56,7 @@ return {
 
   {
     "neanias/everforest-nvim",
-    config = function ()
+    config = function()
       require("pconf.everforest")
     end,
   },
@@ -67,7 +66,7 @@ return {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     event = "UIEnter",
-    config = function ()
+    config = function()
       require("pconf.lualine")
     end,
   },
@@ -75,7 +74,7 @@ return {
   -- スクロールバー関連
   {
     "petertriho/nvim-scrollbar",
-    config = function ()
+    config = function()
       require("pconf.scrollbar")
     end,
   },
@@ -84,7 +83,7 @@ return {
   {
     "lewis6991/gitsigns.nvim",
     event = "UIEnter",
-    config = function ()
+    config = function()
       require("pconf.gitsigns")
     end,
   },
@@ -96,7 +95,7 @@ return {
   },
 
   -- カーソルジャンプ
-  { 
+  {
     "phaazon/hop.nvim",
     event = "UIEnter",
     config = function()
@@ -108,7 +107,7 @@ return {
   {
     "kylechui/nvim-surround",
     config = function()
-        require("nvim-surround").setup({})
+      require("nvim-surround").setup({})
     end
   },
   -- copilot
@@ -119,7 +118,7 @@ return {
       require("pconf.copilot")
     end
   },
-  
+
   -- commentary
   {
     "tpope/vim-commentary",
@@ -143,4 +142,3 @@ return {
 
   { "LunarWatcher/auto-pairs" },
 }
-
