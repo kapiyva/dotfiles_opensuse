@@ -1,5 +1,6 @@
 # add repository
 sudo zypper ar https://download.opensuse.org/repositories/devel:/languages:/go/openSUSE_Factory/devel:languages:go.repo
+
 # install tools
 sudo zypper in -y --type pattern devel_basis
 sudo zypper in -y flatpak
@@ -10,7 +11,7 @@ sudo zypper in -y starship
 sudo zypper in -y ripgrep
 sudo zypper in -y lazygit
 
-# replace dotfiles
+# deploy dotfiles
 mv ~/.bashrc ~/.bashrc_bk
 ln -s ~/dotfiles/home/.bashrc ~
 
@@ -20,6 +21,7 @@ ln -s ~/dotfiles/home/.alias ~
 mv ~/.gitconfig ~/.gitconfig_bk
 ln -s ~/dotfiles/home/.gitconfig ~
 
+# clone neovim config
 mkdir ~/.config
 gh repo clone kapiyva/neovim_config ~/.config/nvim
 
