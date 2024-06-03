@@ -2,7 +2,7 @@ This repository is made for openSUSE.
 
 # セットアップ
 
-github cliをインストール   
+github cli をインストール  
 `https://github.com/cli/cli/blob/trunk/docs/install_linux.md`
 
 `dotfiles`をクローン  
@@ -25,6 +25,11 @@ github cliをインストール
 
 # for Desktop
 
-手動インストールまで完了後、下記のコマンドを実行することでデスクトップ向けのセットアップを行う
+## セットアップスクリプト
 
+手動インストールまで完了後、下記のコマンドを実行することでデスクトップ向けのセットアップを行う  
 `sudo chmod +x ~/dotfiles/install_desktop.sh && ~/dotfiles/install_desktop.sh`
+
+## フォント
+
+`https://github.com/yuru7/udev-gothic/`
