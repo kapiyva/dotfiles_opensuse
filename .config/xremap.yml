@@ -10,7 +10,7 @@ modmap:
       Space: [Shift_L, Space]
       CapsLock: [CapsLock, Esc]
     device:
-      not: ['Apple']
+      not: ["Apple"]
   - name: Mac
     remap:
       LeftMeta: [LeftCtrl, Muhenkan]
@@ -21,7 +21,7 @@ modmap:
       Space: [Shift_L, Space]
       CapsLock: [CapsLock, Esc]
     device:
-      only: ['Apple']
+      only: ["Apple"]
 virtual_modifiers:
   - CapsLock
 keymap:
@@ -30,3 +30,6 @@ keymap:
       CapsLock-j: Down
       CapsLock-k: Up
       CapsLock-l: Right
+      CapsLock-s: C-SUPER-Left
+      CapsLock-d: SUPER-w
+      CapsLock-f: C-SUPER-Right
