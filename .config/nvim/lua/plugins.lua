@@ -12,6 +12,7 @@ return {
         'coc-eslint',
         'coc-prettier',
         'coc-rust-analyzer',
+        'coc-lua',
       }
       --config
       require("pconf.coc")

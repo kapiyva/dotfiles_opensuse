@@ -2,6 +2,7 @@
   "diagnostic.autoRefresh": true,
   "coc.preferences.formatOnSave": true,
   "tsserver.experimental.enableProjectDiagnostics": true,
+  "Lua.diagnostics.globals": ["vim", "a", "yes", "unix"],
   "cSpell.userWords": [
     "automock",
     "dotfiles",
