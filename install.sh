@@ -11,6 +11,9 @@ sudo zypper in -y starship
 sudo zypper in -y ripgrep
 sudo zypper in -y lazygit
 
+# add flathub
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
 # deploy dotfiles
 mv ~/.bashrc ~/.bashrc_bk
 ln -s ~/dotfiles/home/.bashrc ~
@@ -23,6 +26,3 @@ ln -s ~/dotfiles/home/.gitconfig ~
 
 mv ~/.config/nvim ~/.config/nvim_bk
 ln -s ~/dotfiles/.config/nvim ~/.config/
-
-# add flathub
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
