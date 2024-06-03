@@ -12,15 +12,15 @@ sudo zypper in -y lazygit
 
 # replace dotfiles
 mv ~/.bashrc ~/.bashrc_bk
-ln -s ~/dotfiles/.bashrc ~
+ln -s ~/dotfiles/home/.bashrc ~
 
 mv ~/.alias ~/.alias_bk
-ln -s ~/dotfiles/.alias ~
+ln -s ~/dotfiles/home/.alias ~
 
 mv ~/.gitconfig ~/.gitconfig_bk
-ln -s ~/dotfiles/.gitconfig ~
+ln -s ~/dotfiles/home/.gitconfig ~
 
-mkdir .config
+mkdir ~/.config
 gh repo clone kapiyva/neovim_config ~/.config/nvim
 
 # add flathub
