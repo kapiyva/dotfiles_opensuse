@@ -9,3 +9,5 @@
 	email = ri9.py1201@gmail.com
 [pull]
 	rebase = false
+[init]
+	defaultBranch = main
