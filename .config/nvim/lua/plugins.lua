@@ -5,6 +5,16 @@ return {
     branch = "release",
     event = "UIEnter",
     config = function ()
+      -- extentions
+      vim.g.coc_global_extensions = {
+        'coc-json',
+        'coc-tsserver',
+        'coc-eslint',
+        'coc-prettier',
+        'coc-rust-analyzer',
+        'coc-lua',
+      }
+      --config
       require("pconf.coc")
     end,
   },
