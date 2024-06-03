@@ -6,7 +6,7 @@ github cli をインストール
 `https://github.com/cli/cli/blob/trunk/docs/install_linux.md`
 
 `dotfiles`をクローン  
-`gh repo clone kapiyva/dotfiles ~/dotfiles`
+`gh repo clone kapiyva/dotfiles ~/dotfiles -- --recurse-submodules`
 
 インストールスクリプトを実行  
 `sudo chmod +x ~/dotfiles/install.sh && ~/dotfiles/install.sh`
