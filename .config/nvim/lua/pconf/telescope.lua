@@ -3,8 +3,11 @@ require('telescope').load_extension('media_files')
 
 require('telescope').setup({
   defaults = {
-    file_ignore_patterns = { 'node_modules', 'venv', },
+    file_ignore_patterns = { 'node_modules', 'venv', '.git' },
     -- path_display = {'shorten'},
+  },
+  pickers = {
+    find_files = { hidden = true }
   },
   extentions = {
     coc = {
