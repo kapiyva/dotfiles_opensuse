@@ -29,7 +29,10 @@ return {
     end,
   },
   { "fannheyward/telescope-coc.nvim" },
-  { "nvim-telescope/telescope-media-files.nvim" },
+  {
+    "nvim-telescope/telescope-media-files.nvim",
+    dependencies = { "nvim-lua/popup.nvim" },
+  },
 
   -- ファイルツリー
   {

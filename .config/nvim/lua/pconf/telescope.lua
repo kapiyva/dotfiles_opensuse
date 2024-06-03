@@ -11,7 +11,7 @@ require('telescope').setup({
       prefer_locations = true,
     },
     media_files = {
-      filetypes = { "png", "jpg", "jpeg", "svg" }
+      find_cmd = "rg"
     }
   }
 })
