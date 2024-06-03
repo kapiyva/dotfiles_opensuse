@@ -23,7 +23,5 @@ ln -s ~/dotfiles/.gitconfig ~
 mkdir .config
 gh repo clone kapiyva/neovim_config ~/.config/nvim
 
-ln -s ~/dotfiles/.config/xremap.yml ~/.config
-
 # add flathub
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
