@@ -1,0 +1,26 @@
+{
+  "diagnostic.autoRefresh": true,
+  "coc.preferences.formatOnSave": true,
+  "tsserver.experimental.enableProjectDiagnostics": true,
+  "cSpell.userWords": [
+    "automock",
+    "dotfiles",
+    "firestore",
+    "ideoj",
+    "interactor",
+    "jsqr",
+    "kagisuru",
+    "markuplint",
+    "mockall",
+    "postbuild",
+    "prebuild",
+    "qrcode",
+    "riku",
+    "semibold",
+    "sqlx",
+    "tailwindcss",
+    "usecase",
+    "vite",
+    "vitest"
+  ]
+}

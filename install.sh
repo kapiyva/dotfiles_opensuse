@@ -21,9 +21,8 @@ ln -s ~/dotfiles/home/.alias ~
 mv ~/.gitconfig ~/.gitconfig_bk
 ln -s ~/dotfiles/home/.gitconfig ~
 
-# clone neovim config
-mkdir ~/.config
-gh repo clone kapiyva/neovim_config ~/.config/nvim
+mv ~/.config/nvim ~/.config/nvim_bk
+ln -s ~/dotfiles/.config/nvim ~/.config/
 
 # add flathub
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
