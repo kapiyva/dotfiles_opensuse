@@ -38,7 +38,10 @@ return {
   -- ファイルツリー
   {
     "nvim-treesitter/nvim-treesitter",
-    lazy = true,
+    event = "BufEnter",
+    config = function()
+      require("pconf.treesitter")
+    end,
   },
 
   -- ファイルエクスプローラー
