@@ -13,6 +13,7 @@ return {
         'coc-prettier',
         'coc-rust-analyzer',
         'coc-lua',
+        '@yaegassy/coc-tailwindcss3',
       }
       --config
       require("pconf.coc")
