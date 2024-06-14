@@ -35,7 +35,7 @@ return {
     dependencies = { "nvim-lua/popup.nvim" },
   },
 
-  -- ファイルツリー
+  -- ハイライト
   {
     "nvim-treesitter/nvim-treesitter",
     event = "BufEnter",
@@ -55,13 +55,6 @@ return {
   },
 
   -- theme
-  -- {
-  --   "folke/tokyonight.nvim",
-  --   config = function ()
-  --     require("pconf.tokyonight")
-  --   end,
-  -- },
-
   {
     "neanias/everforest-nvim",
     config = function()
