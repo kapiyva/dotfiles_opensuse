@@ -21,6 +21,7 @@
     "sqlx",
     "tailwindcss",
     "usecase",
+    "uuid",
     "vite",
     "vitest"
   ]
