@@ -54,7 +54,7 @@ return {
     end,
   },
 
-  -- theme
+  -- カラースキーム
   {
     "neanias/everforest-nvim",
     config = function()
