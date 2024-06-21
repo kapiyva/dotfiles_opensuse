@@ -6,4 +6,5 @@ sudo systemctl enable xremap.service
 
 # install wezterm
 sudo zypper in -y wezterm
+mv ~/.wezterm.lua ~/.wezterm.lua_bk
 ln -s ~/dotfiles/home/.wezterm.lua ~
