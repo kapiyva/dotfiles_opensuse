@@ -11,6 +11,8 @@ sudo zypper in -y ripgrep
 sudo zypper in -y lazygit
 sudo zypper in -y fd
 
+# install rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # deploy dotfiles
 mv ~/.bashrc ~/.bashrc_bk

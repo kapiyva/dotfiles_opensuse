@@ -13,10 +13,6 @@ github cli をインストール
 
 # 手動インストール対象
 
-## Rust
-
-`https://www.rust-lang.org/ja/learn/get-started`
-
 ## asdf
 
 `https://asdf-vm.com/guide/getting-started.html`
