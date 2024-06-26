@@ -3,7 +3,6 @@ sudo zypper ar https://download.opensuse.org/repositories/devel:/languages:/go/o
 
 # install tools
 sudo zypper in -y --type pattern devel_basis
-sudo zypper in -y flatpak
 sudo zypper in -y neovim
 sudo zypper in -y eza
 sudo zypper in -y bat
@@ -12,8 +11,6 @@ sudo zypper in -y ripgrep
 sudo zypper in -y lazygit
 sudo zypper in -y fd
 
-# add flathub
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 # deploy dotfiles
 mv ~/.bashrc ~/.bashrc_bk
