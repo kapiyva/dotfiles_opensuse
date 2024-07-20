@@ -16,13 +16,13 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # deploy dotfiles
 mv ~/.bashrc ~/.bashrc_bk
-ln -s ~/dotfiles/home/.bashrc ~
+ln -s ~/dotfiles/home/bashrc ~/.bashrc
 
 mv ~/.alias ~/.alias_bk
-ln -s ~/dotfiles/home/.alias ~
+ln -s ~/dotfiles/home/alias ~/.alias
 
 mv ~/.gitconfig ~/.gitconfig_bk
-ln -s ~/dotfiles/home/.gitconfig ~
+ln -s ~/dotfiles/home/gitconfig ~/.gitconfig
 
 mv ~/.config/nvim ~/.config/nvim_bk
-ln -s ~/dotfiles/.config/nvim ~/.config/
+ln -s ~/dotfiles/config/nvim ~/.config/
