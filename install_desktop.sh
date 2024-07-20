@@ -1,3 +1,7 @@
+# setting inputrc
+mv ~/.inputrc ~/.inputrc_bk
+ln -s ~/dotfiles/home/inputrc ~/.inputrc
+
 # setting xremap
 ln -s ~/dotfiles/config/xremap.yml ~/.config
 cargo install xremap --features kde
