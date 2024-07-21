@@ -29,3 +29,7 @@ github cli をインストール
 ## フォント
 
 `https://github.com/yuru7/udev-gothic/`
+
+## ショートカット設定
+
+`kde_shortcuts.kksrc`をインポート
