@@ -10,6 +10,7 @@ sudo zypper in -y starship
 sudo zypper in -y ripgrep
 sudo zypper in -y lazygit
 sudo zypper in -y fd
+sudo zypper in -y direnv
 
 # install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
