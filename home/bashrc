@@ -19,10 +19,5 @@ eval "$(starship init bash)"
 
 # cargo
 . "$HOME/.cargo/env"
-
-# asdf
-. "$HOME/.asdf/asdf.sh"
-. "$HOME/.asdf/completions/asdf.bash"
-
-# direnv
-eval "$(direnv hook bash)"
+# mise
+eval "$(/home/kapiyva/.local/bin/mise activate bash)"
