@@ -7,12 +7,13 @@ return {
     config = function()
       -- extentions
       vim.g.coc_global_extensions = {
-        'coc-json',
-        'coc-tsserver',
         'coc-eslint',
+        'coc-json',
+        'coc-lua',
         'coc-prettier',
         'coc-rust-analyzer',
-        'coc-lua',
+        'coc-toml',
+        'coc-tsserver',
         '@yaegassy/coc-tailwindcss3',
       }
       --config
