@@ -5,6 +5,7 @@
   "Lua.diagnostics.globals": ["vim", "a", "yes", "unix"],
   "cSpell.userWords": [
     "automock",
+    "bytea",
     "dotfiles",
     "firestore",
     "ideoj",
@@ -20,8 +21,10 @@
     "semibold",
     "sqlx",
     "tailwindcss",
+    "unnest",
     "usecase",
     "uuid",
+    "varchar",
     "vite",
     "vitest"
   ]
