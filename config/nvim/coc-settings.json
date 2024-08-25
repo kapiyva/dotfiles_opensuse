@@ -3,9 +3,11 @@
   "coc.preferences.formatOnSave": true,
   "tsserver.experimental.enableProjectDiagnostics": true,
   "Lua.diagnostics.globals": ["vim", "a", "yes", "unix"],
+  "rust-analyzer.check.command": "clippy",
   "cSpell.userWords": [
     "automock",
     "bytea",
+    "clippy",
     "dotfiles",
     "firestore",
     "ideoj",
