@@ -1,5 +1,5 @@
 return {
-  -- lsp管理
+  -- coc.nvim
   {
     "neoclide/coc.nvim",
     branch = "release",
@@ -21,7 +21,7 @@ return {
     end,
   },
 
-  -- ファジーファインダー
+  -- fazzy finder
   {
     "nvim-telescope/telescope.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
@@ -36,7 +36,7 @@ return {
     dependencies = { "nvim-lua/popup.nvim" },
   },
 
-  -- ハイライト
+  -- highlight
   {
     "nvim-treesitter/nvim-treesitter",
     event = "BufEnter",
@@ -45,7 +45,7 @@ return {
     end,
   },
 
-  -- ファイルエクスプローラー
+  -- file explorer
   {
     "nvim-tree/nvim-tree.lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -55,7 +55,7 @@ return {
     end,
   },
 
-  -- カラースキーム
+  -- color scheme
   {
     "neanias/everforest-nvim",
     config = function()
@@ -63,7 +63,7 @@ return {
     end,
   },
 
-  -- ステータスバー装飾
+  -- status line
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -73,7 +73,7 @@ return {
     end,
   },
 
-  -- スクロールバー関連
+  -- scrollbar
   {
     "petertriho/nvim-scrollbar",
     config = function()
@@ -81,7 +81,7 @@ return {
     end,
   },
 
-  -- Git関連
+  -- Git
   {
     "lewis6991/gitsigns.nvim",
     event = "UIEnter",
@@ -90,13 +90,13 @@ return {
     end,
   },
 
-  -- rust setup
+  -- rust
   {
     "rust-lang/rust.vim",
     ft = "rust",
   },
 
-  -- カーソルジャンプ
+  -- word jump
   {
     "phaazon/hop.nvim",
     event = "UIEnter",
@@ -112,6 +112,7 @@ return {
       require("nvim-surround").setup({})
     end
   },
+
   -- copilot
   {
     "github/copilot.vim",
