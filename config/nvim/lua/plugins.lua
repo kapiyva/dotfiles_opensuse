@@ -83,11 +83,18 @@ return {
 
   -- Git
   {
-    "lewis6991/gitsigns.nvim",
-    event = "UIEnter",
-    config = function()
-      require("pconf.gitsigns")
-    end,
+    "kdheepak/lazygit.nvim",
+    cmd = {
+      "LazyGit",
+      "LazyGitConfig",
+      "LazyGitCurrentFile",
+      "LazyGitFilter",
+      "LazyGitFilterCurrentFile",
+    },
+    dependencies = { "nvim-lua/plenary.nvim" },
+    keys = {
+      { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
+    }
   },
 
   -- rust
