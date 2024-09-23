@@ -8,6 +8,7 @@
     "automock",
     "bytea",
     "clippy",
+    "concat",
     "dotfiles",
     "firestore",
     "ideoj",
