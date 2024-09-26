@@ -1,5 +1,6 @@
 # add repository
 sudo zypper ar https://download.opensuse.org/repositories/devel:/languages:/go/openSUSE_Factory/devel:languages:go.repo
+sudo zypper ref
 
 # install tools
 sudo zypper in -y --type pattern devel_basis
