@@ -31,3 +31,7 @@ ln -s ~/dotfiles/home/gitconfig ~/.gitconfig
 
 mv ~/.config/nvim ~/.config/nvim_bk
 ln -s ~/dotfiles/config/nvim ~/.config/
+
+mv ~/.config/lazygit ~/.config/lazygit_bk
+ln -s ~/dotfiles/config/lazygit ~/.config/
+
