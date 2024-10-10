@@ -20,4 +20,5 @@ eval "$(starship init bash)"
 # cargo
 . "$HOME/.cargo/env"
 # mise
+export PATH="$HOME/.local/share/mise/shims:$PATH"
 eval "$(/home/kapiyva/.local/bin/mise activate bash)"
