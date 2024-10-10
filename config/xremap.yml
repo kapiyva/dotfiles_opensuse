@@ -31,5 +31,5 @@ keymap:
       CapsLock-k: Up
       CapsLock-l: Right
       CapsLock-s: C-SUPER-Left
-      CapsLock-d: SUPER-w
+      CapsLock-d: SUPER-Tab
       CapsLock-f: C-SUPER-Right
