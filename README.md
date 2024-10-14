@@ -29,6 +29,7 @@ github cli をインストール
 ## フォント
 
 `https://github.com/yuru7/udev-gothic/`
+`https://fonts.google.com/specimen/IBM+Plex+Sans`
 
 ## ショートカット設定
 
