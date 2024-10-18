@@ -6,7 +6,8 @@
 	helper = !/usr/bin/gh auth git-credential
 [user]
 	name = kapiyva
-	email = ri9.py1201@gmail.com
+	email = ri9py1201@proton.me
+	signingkey = 1C91642DF71D4525
 [pull]
 	rebase = false
 [init]
