@@ -93,7 +93,7 @@ return {
     },
     dependencies = { "nvim-lua/plenary.nvim" },
     keys = {
-      { "lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
+      { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
     }
   },
 
@@ -150,5 +150,6 @@ return {
     end
   },
 
+  -- auto pairing brackets
   { "LunarWatcher/auto-pairs" },
 }
