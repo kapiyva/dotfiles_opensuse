@@ -152,4 +152,16 @@ return {
 
   -- auto pairing brackets
   { "LunarWatcher/auto-pairs" },
+
+  -- buffer as tab and tab util
+  {
+    'romgrk/barbar.nvim',
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+    },
+    config = function()
+      require('pconf.barbar')
+    end,
+    version = '^1.0.0',
+  },
 }
