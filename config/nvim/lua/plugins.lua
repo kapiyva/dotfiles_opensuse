@@ -45,14 +45,33 @@ return {
     end,
   },
 
-  -- file explorer
+  -- display context
   {
-    "nvim-tree/nvim-tree.lua",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    keys = { "<leader>e" },
+    "nvim-treesitter/nvim-treesitter-context",
+    event = { "BufNewFile", "BufReadPre" },
     config = function()
-      require("pconf.nvim-tree")
+      require("pconf.nvim-treesitter-context")
     end,
+  },
+  -- file explorer
+  -- {
+  --   "nvim-tree/nvim-tree.lua",
+  --   dependencies = { "nvim-tree/nvim-web-devicons" },
+  --   keys = { "<leader>e" },
+  --   config = function()
+  --     require("pconf.nvim-tree")
+  --   end,
+  -- },
+  {
+    'stevearc/oil.nvim',
+    ---@module 'oil'
+    ---@type oil.SetupOpts
+    opts = {},
+    -- Optional dependencies
+    dependencies = {
+      { "echasnovski/mini.icons", opts = {} },
+      "nvim-tree/nvim-web-devicons"
+    }, -- use if prefer nvim-web-devicons
   },
 
   -- color scheme
@@ -81,21 +100,14 @@ return {
     end,
   },
 
-  -- Git
-  -- {
-  --   "kdheepak/lazygit.nvim",
-  --   cmd = {
-  --     "LazyGit",
-  --     "LazyGitConfig",
-  --     "LazyGitCurrentFile",
-  --     "LazyGitFilter",
-  --     "LazyGitFilterCurrentFile",
-  --   },
-  --   dependencies = { "nvim-lua/plenary.nvim" },
-  --   keys = {
-  --     { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
-  --   }
-  -- },
+  -- auto pairing brackets
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = function()
+      require("nvim-autopairs").setup({ map_cr = false })
+    end,
+  },
 
   -- rust
   {
@@ -120,15 +132,6 @@ return {
     end
   },
 
-  -- copilot
-  {
-    "github/copilot.vim",
-    event = "BufEnter",
-    config = function()
-      require("pconf.copilot")
-    end
-  },
-
   -- commentary
   {
     "tpope/vim-commentary",
@@ -150,9 +153,6 @@ return {
     end
   },
 
-  -- auto pairing brackets
-  { "LunarWatcher/auto-pairs" },
-
   -- buffer as tab and tab util
   {
     'romgrk/barbar.nvim',
@@ -163,5 +163,18 @@ return {
       require('pconf.barbar')
     end,
     version = '^1.0.0',
+  },
+
+  -- display command
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("pconf.noice")
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    }
   },
 }
