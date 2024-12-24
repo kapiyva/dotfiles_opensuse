@@ -17,7 +17,7 @@ return {
         '@yaegassy/coc-tailwindcss3',
       }
       --config
-      require("pconf.coc")
+      require("extentions.coc")
     end,
   },
 
@@ -27,7 +27,7 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     keys = { "<leader>f" },
     config = function()
-      require("pconf.telescope")
+      require("extentions.telescope")
     end,
   },
   { "fannheyward/telescope-coc.nvim" },
@@ -41,7 +41,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     event = "BufEnter",
     config = function()
-      require("pconf.treesitter")
+      require("extentions.treesitter")
     end,
   },
 
@@ -50,7 +50,7 @@ return {
     "nvim-treesitter/nvim-treesitter-context",
     event = { "BufNewFile", "BufReadPre" },
     config = function()
-      require("pconf.nvim-treesitter-context")
+      require("extentions.nvim-treesitter-context")
     end,
   },
   -- file explorer
@@ -59,15 +59,15 @@ return {
   --   dependencies = { "nvim-tree/nvim-web-devicons" },
   --   keys = { "<leader>e" },
   --   config = function()
-  --     require("pconf.nvim-tree")
+  --     require("extentions.nvim-tree")
   --   end,
   -- },
   {
     'stevearc/oil.nvim',
     ---@module 'oil'
-    ---@type oil.SetupOpts
-    opts = {},
-    -- Optional dependencies
+    config = function()
+      require("extentions.oil")
+    end,
     dependencies = {
       { "echasnovski/mini.icons", opts = {} },
       "nvim-tree/nvim-web-devicons"
@@ -78,7 +78,7 @@ return {
   {
     "neanias/everforest-nvim",
     config = function()
-      require("pconf.everforest")
+      require("extentions.everforest")
     end,
   },
 
@@ -88,7 +88,7 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     event = "UIEnter",
     config = function()
-      require("pconf.lualine")
+      require("extentions.lualine")
     end,
   },
 
@@ -96,7 +96,7 @@ return {
   {
     "petertriho/nvim-scrollbar",
     config = function()
-      require("pconf.scrollbar")
+      require("extentions.scrollbar")
     end,
   },
 
@@ -120,7 +120,7 @@ return {
     "phaazon/hop.nvim",
     event = "UIEnter",
     config = function()
-      require("pconf.hop")
+      require("extentions.hop")
     end
   },
 
@@ -160,7 +160,7 @@ return {
       'nvim-tree/nvim-web-devicons',
     },
     config = function()
-      require('pconf.barbar')
+      require('extentions.barbar')
     end,
     version = '^1.0.0',
   },
@@ -170,7 +170,7 @@ return {
     "folke/noice.nvim",
     event = "VeryLazy",
     config = function()
-      require("pconf.noice")
+      require("extentions.noice")
     end,
     dependencies = {
       "MunifTanjim/nui.nvim",
