@@ -1,28 +1,23 @@
-local options = {
-  backup = false,
-  swapfile = false,
-  writebackup = false,
-  number = true,
-  mouse = a,
-  smartindent = true,
-  expandtab = true,
-  shiftwidth = 2,
-  tabstop = 2,
-  list = true,
-  splitbelow = true,
-  splitright = true,
-  signcolumn = yes,
-  fileformat = unix,
-  timeout = false,
-  laststatus = 3,
-}
-
-for k, v in pairs(options) do
-  vim.opt[k] = v
-end
-
+-- options
+vim.opt.backup = false
+vim.opt.swapfile = false
+vim.opt.writebackup = false
+vim.opt.number = true
+vim.opt.mouse = a
+vim.opt.smartindent = true
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
+vim.opt.list = true
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+vim.opt.signcolumn = yes
+vim.opt.fileformat = unix
+vim.opt.timeout = false
+vim.opt.laststatus = 3
 vim.opt.shortmess:append("I")
 
+-- key config
 vim.g.mapleader = ","
 vim.keymap.set('n', '<Esc><Esc>', ':nohl<CR>')
 
