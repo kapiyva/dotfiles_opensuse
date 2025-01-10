@@ -1,4 +1,17 @@
-return {
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup({
   -- coc.nvim
   {
     "neoclide/coc.nvim",
@@ -7,6 +20,7 @@ return {
     config = function()
       -- extentions
       vim.g.coc_global_extensions = {
+        'coc-spell-checker',
         'coc-eslint',
         'coc-json',
         'coc-lua',
@@ -17,9 +31,26 @@ return {
         '@yaegassy/coc-tailwindcss3',
       }
       --config
-      require("extentions.coc")
+      require("plugins.coc")
     end,
   },
+
+  -- lsp
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require("plugins.lspconfig")
+    end
+  },
+  {
+    "williamboman/mason.nvim",
+    config = function()
+      require("plugins.mason")
+    end
+  },
+  { "williamboman/mason-lspconfig.nvim" },
+  { "hrsh7th/nvim-cmp" },
+  { "hrsh7th/cmp-nvim-lsp" },
 
   -- fazzy finder
   {
@@ -27,7 +58,7 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     keys = { "<leader>f" },
     config = function()
-      require("extentions.telescope")
+      require("plugins.telescope")
     end,
   },
   { "fannheyward/telescope-coc.nvim" },
@@ -41,7 +72,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     event = "BufEnter",
     config = function()
-      require("extentions.treesitter")
+      require("plugins.treesitter")
     end,
   },
 
@@ -50,7 +81,7 @@ return {
     "nvim-treesitter/nvim-treesitter-context",
     event = { "BufNewFile", "BufReadPre" },
     config = function()
-      require("extentions.nvim-treesitter-context")
+      require("plugins.nvim-treesitter-context")
     end,
   },
   -- file explorer
@@ -59,14 +90,14 @@ return {
   --   dependencies = { "nvim-tree/nvim-web-devicons" },
   --   keys = { "<leader>e" },
   --   config = function()
-  --     require("extentions.nvim-tree")
+  --     require("plugins.nvim-tree")
   --   end,
   -- },
   {
     'stevearc/oil.nvim',
     ---@module 'oil'
     config = function()
-      require("extentions.oil")
+      require("plugins.oil")
     end,
     dependencies = {
       { "echasnovski/mini.icons", opts = {} },
@@ -78,7 +109,7 @@ return {
   {
     "neanias/everforest-nvim",
     config = function()
-      require("extentions.everforest")
+      require("plugins.everforest")
     end,
   },
 
@@ -88,7 +119,7 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     event = "UIEnter",
     config = function()
-      require("extentions.lualine")
+      require("plugins.lualine")
     end,
   },
 
@@ -96,7 +127,7 @@ return {
   {
     "petertriho/nvim-scrollbar",
     config = function()
-      require("extentions.scrollbar")
+      require("plugins.scrollbar")
     end,
   },
 
@@ -120,7 +151,7 @@ return {
     "phaazon/hop.nvim",
     event = "UIEnter",
     config = function()
-      require("extentions.hop")
+      require("plugins.hop")
     end
   },
 
@@ -160,7 +191,7 @@ return {
       'nvim-tree/nvim-web-devicons',
     },
     config = function()
-      require('extentions.barbar')
+      require('plugins.barbar')
     end,
     version = '^1.0.0',
   },
@@ -170,11 +201,11 @@ return {
     "folke/noice.nvim",
     event = "VeryLazy",
     config = function()
-      require("extentions.noice")
+      require("plugins.noice")
     end,
     dependencies = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
     }
   },
-}
+})
