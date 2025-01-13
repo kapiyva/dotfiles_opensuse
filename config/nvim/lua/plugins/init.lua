@@ -13,27 +13,27 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   -- coc.nvim
-  {
-    "neoclide/coc.nvim",
-    branch = "release",
-    event = "UIEnter",
-    config = function()
-      -- extentions
-      vim.g.coc_global_extensions = {
-        'coc-spell-checker',
-        'coc-eslint',
-        'coc-json',
-        'coc-lua',
-        'coc-prettier',
-        'coc-rust-analyzer',
-        'coc-toml',
-        'coc-tsserver',
-        '@yaegassy/coc-tailwindcss3',
-      }
-      --config
-      require("plugins.coc")
-    end,
-  },
+  --{
+  --  "neoclide/coc.nvim",
+  --  branch = "release",
+  --  event = "UIEnter",
+  --  config = function()
+  --    -- extentions
+  --    vim.g.coc_global_extensions = {
+  --      'coc-spell-checker',
+  --      'coc-eslint',
+  --      'coc-json',
+  --      'coc-lua',
+  --      'coc-prettier',
+  --      -- 'coc-rust-analyzer',
+  --      'coc-toml',
+  --      'coc-tsserver',
+  --      '@yaegassy/coc-tailwindcss3',
+  --    }
+  --    --config
+  --    require("plugins.coc")
+  --  end,
+  --},
 
   -- lsp
   {
@@ -42,6 +42,7 @@ require("lazy").setup({
       require("plugins.lspconfig")
     end
   },
+  -- lsp server manager
   {
     "williamboman/mason.nvim",
     config = function()
@@ -49,8 +50,19 @@ require("lazy").setup({
     end
   },
   { "williamboman/mason-lspconfig.nvim" },
-  { "hrsh7th/nvim-cmp" },
+  -- autocomplete
+  { "hrsh7th/cmp-vsnip" },
+  { "hrsh7th/vim-vsnip" },
   { "hrsh7th/cmp-nvim-lsp" },
+  { "hrsh7th/cmp-buffer"},
+  { "hrsh7th/cmp-path"},
+  { "hrsh7th/cmp-cmdline"},
+  { 
+    "hrsh7th/nvim-cmp",
+    config = function()
+      require("plugins.nvim-cmp")
+    end
+  },
 
   -- fazzy finder
   {

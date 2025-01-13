@@ -2,7 +2,7 @@ local lsp = require("plugins.lspconfig")
 
 lsp.setup('rust_analyzer', {
   settings = {
-    ['rust-analyzer'] = {
+    ['rust_analyzer'] = {
       cargo = { allFeatures = true },
       checkOnSave = { command = "clippy" },
     },
