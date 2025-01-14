@@ -12,29 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  -- coc.nvim
-  --{
-  --  "neoclide/coc.nvim",
-  --  branch = "release",
-  --  event = "UIEnter",
-  --  config = function()
-  --    -- extentions
-  --    vim.g.coc_global_extensions = {
-  --      'coc-spell-checker',
-  --      'coc-eslint',
-  --      'coc-json',
-  --      'coc-lua',
-  --      'coc-prettier',
-  --      -- 'coc-rust-analyzer',
-  --      'coc-toml',
-  --      'coc-tsserver',
-  --      '@yaegassy/coc-tailwindcss3',
-  --    }
-  --    --config
-  --    require("plugins.coc")
-  --  end,
-  --},
-
   -- lsp
   {
     "neovim/nvim-lspconfig",
@@ -219,7 +196,7 @@ require("lazy").setup({
     version = '^1.0.0',
   },
 
-  -- display command
+  display command
   {
     "folke/noice.nvim",
     event = "VeryLazy",
