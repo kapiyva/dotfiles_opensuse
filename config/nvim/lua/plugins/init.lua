@@ -64,6 +64,18 @@ require("lazy").setup({
     end
   },
 
+  -- code outline window
+  {
+    'stevearc/aerial.nvim',
+    dependencies = {
+       "nvim-treesitter/nvim-treesitter",
+       "nvim-tree/nvim-web-devicons"
+    },
+    config = function()
+      require("plugins.aerial")
+    end,
+  },
+
   -- fazzy finder
   {
     "nvim-telescope/telescope.nvim",
