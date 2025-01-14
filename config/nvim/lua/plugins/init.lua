@@ -73,7 +73,6 @@ require("lazy").setup({
       require("plugins.telescope")
     end,
   },
-  { "fannheyward/telescope-coc.nvim" },
   {
     "nvim-telescope/telescope-media-files.nvim",
     dependencies = { "nvim-lua/popup.nvim" },
@@ -107,14 +106,14 @@ require("lazy").setup({
   -- },
   {
     'stevearc/oil.nvim',
-    ---@module 'oil'
-    config = function()
-      require("plugins.oil")
-    end,
+    keys = { "<leader>e" },
     dependencies = {
       { "echasnovski/mini.icons", opts = {} },
       "nvim-tree/nvim-web-devicons"
-    }, -- use if prefer nvim-web-devicons
+    },
+    config = function()
+      require("plugins.oil")
+    end,
   },
 
   -- color scheme
