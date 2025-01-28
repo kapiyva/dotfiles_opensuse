@@ -22,28 +22,64 @@ require("lazy").setup({
   -- lsp server manager
   {
     "williamboman/mason.nvim",
+    event = "VeryLazy",
     config = function()
       require("plugins.mason")
-    end
+    end,
   },
   { "williamboman/mason-lspconfig.nvim" },
   -- autocomplete
-  { "hrsh7th/cmp-vsnip" },
-  { "hrsh7th/vim-vsnip" },
-  { "hrsh7th/cmp-nvim-lsp" },
-  { "hrsh7th/cmp-buffer"},
-  { "hrsh7th/cmp-path"},
-  { "hrsh7th/cmp-cmdline"},
+  {
+    "hrsh7th/cmp-vsnip",
+    event = "InsertEnter",
+  },
+  {
+    "hrsh7th/vim-vsnip",
+    event = "InsertEnter",
+  },
+  {
+    "hrsh7th/cmp-nvim-lsp",
+    event = "InsertEnter",
+  },
+  {
+    "hrsh7th/cmp-buffer",
+    event = "InsertEnter",
+  },
+  {
+    "hrsh7th/cmp-path",
+    event = "InsertEnter",
+  },
+  {
+    "hrsh7th/cmp-cmdline",
+    event = "InsertEnter",
+  },
   { 
     "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
     config = function()
       require("plugins.nvim-cmp")
-    end
+    end,
+  },
+
+  -- rust
+  {
+    "rust-lang/rust.vim",
+    ft = "rust",
+  },
+
+  -- prettier
+  {
+    "prettier/vim-prettier",
+    event = "VeryLazy",
+    config = function()
+      require("plugins.prettier")
+    end,
   },
 
   -- code outline window
   {
     'stevearc/aerial.nvim',
+    event = "VeryLazy",
     dependencies = {
        "nvim-treesitter/nvim-treesitter",
        "nvim-tree/nvim-web-devicons"
@@ -57,7 +93,7 @@ require("lazy").setup({
   {
     "nvim-telescope/telescope.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
-    keys = { "<leader>f" },
+    keys = { "<leader>" },
     config = function()
       require("plugins.telescope")
     end,
@@ -70,7 +106,8 @@ require("lazy").setup({
   -- highlight
   {
     "nvim-treesitter/nvim-treesitter",
-    event = "BufEnter",
+    event = "UIEnter",
+    run = ":TSUpdate",
     config = function()
       require("plugins.treesitter")
     end,
@@ -79,20 +116,13 @@ require("lazy").setup({
   -- display context
   {
     "nvim-treesitter/nvim-treesitter-context",
-    event = { "BufNewFile", "BufReadPre" },
+    event = "VeryLazy",
     config = function()
       require("plugins.nvim-treesitter-context")
     end,
   },
+
   -- file explorer
-  -- {
-  --   "nvim-tree/nvim-tree.lua",
-  --   dependencies = { "nvim-tree/nvim-web-devicons" },
-  --   keys = { "<leader>e" },
-  --   config = function()
-  --     require("plugins.nvim-tree")
-  --   end,
-  -- },
   {
     'stevearc/oil.nvim',
     keys = { "<leader>e" },
@@ -123,14 +153,6 @@ require("lazy").setup({
     end,
   },
 
-  -- scrollbar
-  {
-    "petertriho/nvim-scrollbar",
-    config = function()
-      require("plugins.scrollbar")
-    end,
-  },
-
   -- auto pairing brackets
   {
     "windwp/nvim-autopairs",
@@ -140,16 +162,10 @@ require("lazy").setup({
     end,
   },
 
-  -- rust
-  {
-    "rust-lang/rust.vim",
-    ft = "rust",
-  },
-
   -- word jump
   {
     "phaazon/hop.nvim",
-    event = "UIEnter",
+    event = "VeryLazy",
     config = function()
       require("plugins.hop")
     end
@@ -158,35 +174,40 @@ require("lazy").setup({
   -- add/delete/change surrounding pairs
   {
     "kylechui/nvim-surround",
+    event = "VeryLazy",
     config = function()
       require("nvim-surround").setup({})
     end
   },
 
-  -- commentary
+  -- comment out
   {
-    "tpope/vim-commentary",
-    keys = { "v" },
+    "numToStr/Comment.nvim",
+    event = "VeryLazy",
   },
 
   -- window resize
   {
     "simeji/winresizer",
-    event = "UIEnter",
+    event = "VeryLazy",
   },
 
   -- indent line
   {
-    "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
+    "shellRaining/hlchunk.nvim",
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
-      require('ibl').setup()
-    end
+      require("plugins.hlchunk")
+    end,
   },
+
+  -- preview
+  { 'kevinhwang91/nvim-bqf' },
 
   -- buffer as tab and tab util
   {
     'romgrk/barbar.nvim',
+    event = "UIEnter",
     dependencies = {
       'nvim-tree/nvim-web-devicons',
     },
@@ -196,23 +217,11 @@ require("lazy").setup({
     version = '^1.0.0',
   },
 
-  -- display command
-  {
-    "folke/noice.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("plugins.noice")
-    end,
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
-    }
-  },
-
   -- copilot
   { "github/copilot.vim" },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
+    event = "VeryLazy",
     dependencies = {
       { "github/copilot.vim" }, -- or zbirenbaum/copilot.lua
       { "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
