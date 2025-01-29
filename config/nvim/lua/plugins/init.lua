@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  -- lsp
+  -- lsp config
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -92,8 +92,9 @@ require("lazy").setup({
   -- fazzy finder
   {
     "nvim-telescope/telescope.nvim",
+
     dependencies = { "nvim-lua/plenary.nvim" },
-    keys = { "<leader>" },
+    keys = { "<space>" },
     config = function()
       require("plugins.telescope")
     end,
@@ -184,6 +185,9 @@ require("lazy").setup({
   {
     "numToStr/Comment.nvim",
     event = "VeryLazy",
+    config = function()
+      require("plugins.comment")
+    end
   },
 
   -- window resize
@@ -230,5 +234,18 @@ require("lazy").setup({
     config = function()
       require("plugins.copilot-chat")
     end,
+  },
+
+  -- display command
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("plugins.noice")
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    }
   },
 })

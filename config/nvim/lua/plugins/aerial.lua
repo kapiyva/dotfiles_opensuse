@@ -7,4 +7,4 @@ require("aerial").setup({
   end,
 })
 -- You probably also want to set a keymap to toggle aerial
-vim.keymap.set("n", "<leader>o", "<cmd>AerialNavToggle<CR>")
+vim.keymap.set("n", "<space>o", "<cmd>AerialNavToggle<CR>")
