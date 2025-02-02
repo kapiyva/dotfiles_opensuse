@@ -126,7 +126,7 @@ require("lazy").setup({
   -- file explorer
   {
     'stevearc/oil.nvim',
-    keys = { "<leader>e" },
+    keys = { "<space>" },
     dependencies = {
       { "echasnovski/mini.icons", opts = {} },
       "nvim-tree/nvim-web-devicons"
