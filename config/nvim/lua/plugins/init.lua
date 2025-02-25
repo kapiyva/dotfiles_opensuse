@@ -75,15 +75,6 @@ require("lazy").setup({
     end,
   },
 
-  -- -- prettier
-  -- {
-  --   "prettier/vim-prettier",
-  --   event = "VeryLazy",
-  --   config = function()
-  --     require("plugins.prettier")
-  --   end,
-  -- },
-
   -- code outline window
   {
     'stevearc/aerial.nvim',
@@ -199,13 +190,6 @@ require("lazy").setup({
   },
 
   -- window resize
-  -- {
-  --   "simeji/winresizer",
-  --   event = "VeryLazy",
-  --   config = function()
-  --     require("plugins.winresizer")
-  --   end
-  -- },
   {
     "pogyomo/winresize.nvim",
     config = function()
