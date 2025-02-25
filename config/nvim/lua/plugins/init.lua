@@ -67,14 +67,22 @@ require("lazy").setup({
     ft = "rust",
   },
 
-  -- prettier
+  -- none-ls
   {
-    "prettier/vim-prettier",
-    event = "VeryLazy",
+    "nvimtools/none-ls.nvim",
     config = function()
-      require("plugins.prettier")
+      require("plugins.none-ls")
     end,
   },
+
+  -- -- prettier
+  -- {
+  --   "prettier/vim-prettier",
+  --   event = "VeryLazy",
+  --   config = function()
+  --     require("plugins.prettier")
+  --   end,
+  -- },
 
   -- code outline window
   {
@@ -191,9 +199,18 @@ require("lazy").setup({
   },
 
   -- window resize
+  -- {
+  --   "simeji/winresizer",
+  --   event = "VeryLazy",
+  --   config = function()
+  --     require("plugins.winresizer")
+  --   end
+  -- },
   {
-    "simeji/winresizer",
-    event = "VeryLazy",
+    "pogyomo/winresize.nvim",
+    config = function()
+      require("plugins.winresize")
+    end
   },
 
   -- indent line

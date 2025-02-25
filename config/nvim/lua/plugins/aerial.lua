@@ -1,4 +1,6 @@
 require("aerial").setup({
+  backends = { "treesitter", "lsp", "markdown", "asciidoc", "man" },
+  filter_kind = false,
   -- optionally use on_attach to set keymaps when aerial has attached to a buffer
   on_attach = function(bufnr)
     -- Jump forwards/backwards with '{' and '}'

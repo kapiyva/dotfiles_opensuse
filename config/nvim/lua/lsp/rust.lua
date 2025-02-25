@@ -8,3 +8,5 @@ lsp.setup('rust_analyzer', {
     },
   },
 })
+
+vim.g.rustfmt_autosave = 1
