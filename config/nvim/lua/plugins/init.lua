@@ -28,6 +28,12 @@ require("lazy").setup({
     end,
   },
   { "williamboman/mason-lspconfig.nvim" },
+  {
+    "mfussenegger/nvim-lint",
+    config = function()
+      require("plugins.nvim-lint")
+    end,
+  },
   -- autocomplete
   {
     "hrsh7th/cmp-vsnip",
@@ -72,6 +78,14 @@ require("lazy").setup({
     "nvimtools/none-ls.nvim",
     config = function()
       require("plugins.none-ls")
+    end,
+  },
+
+  -- prettier
+  {
+    'prettier/vim-prettier',
+    config = function()
+      require("plugins.prettier")
     end,
   },
 
@@ -189,14 +203,6 @@ require("lazy").setup({
     end
   },
 
-  -- window resize
-  {
-    "pogyomo/winresize.nvim",
-    config = function()
-      require("plugins.winresize")
-    end
-  },
-
   -- indent line
   {
     "shellRaining/hlchunk.nvim",
@@ -207,19 +213,19 @@ require("lazy").setup({
   },
 
   -- preview
-  { 'kevinhwang91/nvim-bqf' },
+  { "kevinhwang91/nvim-bqf" },
 
   -- buffer as tab and tab util
   {
-    'romgrk/barbar.nvim',
+    "romgrk/barbar.nvim",
     event = "UIEnter",
     dependencies = {
-      'nvim-tree/nvim-web-devicons',
+      "nvim-tree/nvim-web-devicons",
     },
     config = function()
-      require('plugins.barbar')
+      require("plugins.barbar")
     end,
-    version = '^1.0.0',
+    version = "^1.0.0",
   },
 
   -- copilot
@@ -238,15 +244,24 @@ require("lazy").setup({
   },
 
   -- display command
+  -- {
+  --   "folke/noice.nvim",
+  --   event = "VeryLazy",
+  --   config = function()
+  --     require("plugins.noice")
+  --   end,
+  --   dependencies = {
+  --     "MunifTanjim/nui.nvim",
+  --     "rcarriga/nvim-notify",
+  --   }
+  -- },
+  {"j-hui/fidget.nvim"},
+
+  -- zen-mode
   {
-    "folke/noice.nvim",
-    event = "VeryLazy",
+    "folke/zen-mode.nvim",
     config = function()
-      require("plugins.noice")
+      require("plugins.zen-mode")
     end,
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
-    }
   },
 })

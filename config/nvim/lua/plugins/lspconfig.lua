@@ -11,9 +11,9 @@ M.default_on_attach = function(client, bufnr)
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-  vim.keymap.set('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
-  vim.keymap.set('n', 'gj', '<cmd>lua vim.diagnostic.goto_next()<CR>')
-  vim.keymap.set('n', 'gk', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
+  vim.keymap.set('n', '<leader>rn', '<CMD>lua vim.lsp.buf.rename()<CR>')
+  vim.keymap.set('n', 'gj', '<CMD>lua vim.diagnostic.goto_next()<CR>')
+  vim.keymap.set('n', 'gk', '<CMD>lua vim.diagnostic.goto_prev()<CR>')
   vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
 
   -- format on save
