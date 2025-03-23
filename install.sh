@@ -14,7 +14,6 @@ sudo zypper in -y fd
 
 # install mise
 curl https://mise.run | sh
-echo 'export PATH="$HOME/.local/share/mise/shims:$PATH"' >> ~/.profile
 
 # install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -35,3 +34,12 @@ ln -s ~/dotfiles/config/nvim ~/.config/
 mv ~/.config/lazygit ~/.config/lazygit_bk
 ln -s ~/dotfiles/config/lazygit ~/.config/
 
+mv ~/.config/mise ~/.config/mise_bk
+ln -s ~/dotfiles/config/mise ~/.config/
+
+mv ~/.cspell.yaml ~/.cspell.yaml_bk
+ln -s ~/dotfiles/home/cspell.yaml ~/.cspell.yaml
+
+# install cspell
+source
+npm install -g cspell
