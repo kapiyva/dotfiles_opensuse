@@ -1,13 +1,18 @@
 ---
 $schema: https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json
-version: '0.2'
+version: "0.2"
 language: en
 words:
-  - kapiyva
-  - kagisuru
-  - nvim
   - autocmd
+  - fkey
+  - kagisuru
+  - kapiyva
   - lazygit
+  - nvim
+  - supabase
+  - thiserror
+  - usecase
+  - valibot
 flagWords:
   - master
   - slave
