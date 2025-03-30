@@ -244,18 +244,17 @@ require("lazy").setup({
   },
 
   -- display command
-  -- {
-  --   "folke/noice.nvim",
-  --   event = "VeryLazy",
-  --   config = function()
-  --     require("plugins.noice")
-  --   end,
-  --   dependencies = {
-  --     "MunifTanjim/nui.nvim",
-  --     "rcarriga/nvim-notify",
-  --   }
-  -- },
-  {"j-hui/fidget.nvim"},
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("plugins.noice")
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    }
+  },
 
   -- zen-mode
   {
