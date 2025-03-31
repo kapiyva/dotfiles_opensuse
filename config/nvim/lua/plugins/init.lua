@@ -28,12 +28,6 @@ require("lazy").setup({
 		end,
 	},
 	{ "williamboman/mason-lspconfig.nvim" },
-	{
-		"mfussenegger/nvim-lint",
-		config = function()
-			require("plugins.nvim-lint")
-		end,
-	},
 	-- autocomplete
 	{
 		"hrsh7th/cmp-vsnip",
@@ -82,12 +76,12 @@ require("lazy").setup({
 	},
 
 	-- prettier
-	{
-		"prettier/vim-prettier",
-		config = function()
-			require("plugins.prettier")
-		end,
-	},
+	-- {
+	-- 	"prettier/vim-prettier",
+	-- 	config = function()
+	-- 		require("plugins.prettier")
+	-- 	end,
+	-- },
 
 	-- code outline window
 	{
@@ -243,17 +237,12 @@ require("lazy").setup({
 		end,
 	},
 
-	-- display command
+	-- display lsp loading state
 	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
+		"j-hui/fidget.nvim",
 		config = function()
-			require("plugins.noice")
+			require("fidget").setup()
 		end,
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
-		},
 	},
 
 	-- zen-mode
