@@ -1,4 +1,4 @@
-require('scrollbar').setup()
+require("scrollbar").setup()
 
 vim.cmd([[
     augroup scrollbar_search_hide

@@ -1,3 +1,3 @@
 local lsp = require("plugins.lspconfig")
 
-lsp.setup('lua_ls', {})
+lsp.setup("lua_ls", {})
