@@ -73,12 +73,12 @@ require("lazy").setup({
     ft = "rust",
   },
 
-  -- none-ls
+  -- Asynchronous Lint Engine
   {
-    "nvimtools/none-ls.nvim",
+    'dense-analysis/ale',
     config = function()
-      require("plugins.none-ls")
-    end,
+      require("plugins.ale")
+    end
   },
 
   -- prettier
