@@ -1,15 +1,15 @@
 require("Comment").setup({
 	toggler = {
 		---Line-comment toggle keymap
-		line = "cc",
+		line = "ccc",
 		---Block-comment toggle keymap
-		block = "cb",
+		block = "ccb",
 	},
 	opleader = {
 		---Line-comment keymap
-		line = "cc",
+		line = "ccc",
 		---Block-comment keymap
-		block = "cb",
+		block = "ccb",
 	},
 	extra = {
 		---Add comment on the line above

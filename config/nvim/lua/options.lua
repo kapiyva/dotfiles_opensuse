@@ -17,6 +17,12 @@ vim.opt.timeout = false
 vim.opt.laststatus = 3
 vim.opt.shortmess:append("I")
 
+-- setup commands
+vim.api.nvim_create_user_command("SetupLocalConfig", function()
+  local script = vim.fn.expand("$MYVIMRC/lua/scripts/setup_local_config.lua")
+  vim.cmd("luafile " .. script)
+end, { desc = "Set up project-local .nvim" })
+
 -- key config
 vim.g.mapleader = ","
 vim.keymap.set("n", "<Esc><Esc>", ":nohl<CR>")

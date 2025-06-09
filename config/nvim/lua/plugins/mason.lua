@@ -1,9 +1,17 @@
 require("mason").setup()
-require("mason-lspconfig").setup({
+require("mason-tool-installer").setup({
 	ensure_installed = {
-		"rust_analyzer",
-		"ts_ls",
-		"eslint",
-		"lua_ls",
+		"cspell",
+		"rust-analyzer",
+		"typescript-language-server",
+		"eslint-lsp",
+		"prettier",
+		"lua-language-server",
+		"stylua",
+	},
+	auto_update = true,
+	run_on_start = true,
+	integrations = {
+		["mason-lspconfig"] = true,
 	},
 })

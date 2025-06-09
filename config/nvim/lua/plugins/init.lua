@@ -23,11 +23,28 @@ require("lazy").setup({
 	{
 		"williamboman/mason.nvim",
 		event = "VeryLazy",
+		dependencies = {
+			"williamboman/mason-lspconfig.nvim",
+			"WhoIsSethDaniel/mason-tool-installer.nvim",
+		},
 		config = function()
 			require("plugins.mason")
 		end,
 	},
-	{ "williamboman/mason-lspconfig.nvim" },
+	-- linter
+	{
+		"mfussenegger/nvim-lint",
+		config = function()
+			require("plugins.nvim-lint")
+		end,
+	},
+	-- formatter
+	{
+		"stevearc/conform.nvim",
+		config = function()
+			require("plugins.conform")
+		end,
+	},
 	-- autocomplete
 	{
 		"hrsh7th/cmp-vsnip",
@@ -63,25 +80,10 @@ require("lazy").setup({
 
 	-- rust
 	{
-		"rust-lang/rust.vim",
-		ft = "rust",
+		"mrcjkb/rustaceanvim",
+		version = "^6", -- Recommended
+		lazy = false, -- This plugin is already lazy
 	},
-
-	-- Asynchronous Lint Engine
-	{
-		"dense-analysis/ale",
-		config = function()
-			require("plugins.ale")
-		end,
-	},
-
-	-- prettier
-	-- {
-	-- 	"prettier/vim-prettier",
-	-- 	config = function()
-	-- 		require("plugins.prettier")
-	-- 	end,
-	-- },
 
 	-- code outline window
 	{
@@ -122,13 +124,13 @@ require("lazy").setup({
 	},
 
 	-- display context
-	{
-		"nvim-treesitter/nvim-treesitter-context",
-		event = "VeryLazy",
-		config = function()
-			require("plugins.nvim-treesitter-context")
-		end,
-	},
+	-- {
+	-- 	"nvim-treesitter/nvim-treesitter-context",
+	-- 	event = "VeryLazy",
+	-- 	config = function()
+	-- 		require("plugins.nvim-treesitter-context")
+	-- 	end,
+	-- },
 
 	-- file explorer
 	{
