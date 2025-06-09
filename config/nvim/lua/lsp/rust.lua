@@ -3,8 +3,19 @@ local lsp = require("plugins.lspconfig")
 lsp.setup("rust_analyzer", {
 	settings = {
 		["rust_analyzer"] = {
+			imports = {
+				granularity = {
+					group = "module",
+				},
+				prefix = "self",
+			},
 			cargo = { allFeatures = true },
-			checkOnSave = { command = "clippy" },
+			checkOnSave = {
+				command = "clippy",
+			},
+			procMacro = {
+				enable = true,
+			},
 		},
 	},
 })
