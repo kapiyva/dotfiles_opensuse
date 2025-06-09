@@ -1,7 +1,7 @@
 local lsp = require("plugins.lspconfig")
 local conform = require("plugins.conform")
 
-lsp.setup("lua_language_server", {
+lsp.setup("lua_ls", {
 	format = function(args)
 		vim.lsp.buf.format({ async = false })
 		conform.format({
