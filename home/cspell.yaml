@@ -4,15 +4,30 @@ version: "0.2"
 language: en
 words:
   - autocmd
+  - chrono
   - fkey
+  - interactor
+  - kagisuru
   - kagisuru
   - kapiyva
+  - kgsr
   - lazygit
+  - mockall
   - nvim
+  - pedy
+  - postgrest
+  - posthog
+  - ratatui
+  - shadcn
+  - sonner
+  - sqlx
+  - supabase
   - supabase
   - thiserror
   - usecase
+  - usecase
   - valibot
+  - vim
 flagWords:
   - master
   - slave
