@@ -12,6 +12,7 @@ words:
   - kapiyva
   - kgsr
   - lazygit
+  - leptos
   - mockall
   - nvim
   - pedy
@@ -19,10 +20,12 @@ words:
   - posthog
   - ratatui
   - shadcn
+  - serde
   - sonner
   - sqlx
   - supabase
   - supabase
+  - stylesheet
   - thiserror
   - usecase
   - usecase
