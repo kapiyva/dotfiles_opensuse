@@ -10,8 +10,9 @@ sudo systemctl enable ~/dotfiles/service/xremap.service
 
 # install wezterm
 sudo zypper in -y wezterm
-mv ~/.wezterm.lua ~/.wezterm.lua_bk
-ln -s ~/dotfiles/home/wezterm.lua ~/.wezterm.lua
+mkdir -p ~/.config/wezterm
+mv ~/.config/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua_bk
+ln -s ~/dotfiles/config/wezterm.lua ~/.config/wezterm/wezterm.lua
 
 # profile config
 echo "xinput set-button-map 'Kensington Expert Wireless TB Mouse' 1 8 3 4 5 6 7 9 10 11 12" >> ~/.profile
