@@ -4,14 +4,15 @@ local config = wezterm.config_builder()
 config.color_scheme = "Everforest Dark (Gogh)"
 config.font = wezterm.font("UDEV Gothic NF")
 config.font_size = 11.0
-config.initial_rows = 35
 config.initial_cols = 140
-config.use_ime = true
-config.window_background_opacity = 0.90
-config.use_fancy_tab_bar = false
-config.window_decorations = "RESIZE"
-config.show_new_tab_button_in_tab_bar = false
+config.initial_rows = 35
 config.show_close_tab_button_in_tabs = false
+config.show_new_tab_button_in_tab_bar = false
+config.use_fancy_tab_bar = false
+config.window_background_opacity = 0.90
+config.window_decorations = "RESIZE"
+-- other settings
+config.use_ime = true
 -- key config
 config.keys = {
   {
