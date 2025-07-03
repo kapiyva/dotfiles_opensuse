@@ -247,4 +247,11 @@ require("lazy").setup({
       require("plugins.zen-mode")
     end,
   },
+  -- claude
+  {
+    "greggh/claude-code.nvim",
+    config = function()
+      require("plugins.claude")
+    end,
+  },
 })
