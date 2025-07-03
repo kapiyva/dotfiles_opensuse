@@ -25,6 +25,7 @@ export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
 # mise
 eval "$(/home/kapiyva/.local/bin/mise activate bash)"
 
+export PATH=~/.npm-global/bin:$PATH
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/home/kapiyva/.rd/bin:$PATH"
