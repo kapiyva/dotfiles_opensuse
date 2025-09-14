@@ -45,6 +45,7 @@ require("lazy").setup({
       require("plugins.conform")
     end,
   },
+  -- remove whitespace
   {
     "cappyzawa/trim.nvim",
     opts = {},
