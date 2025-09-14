@@ -45,6 +45,10 @@ require("lazy").setup({
       require("plugins.conform")
     end,
   },
+  {
+    "cappyzawa/trim.nvim",
+    opts = {},
+  },
   -- autocomplete
   {
     "hrsh7th/cmp-vsnip",
@@ -137,6 +141,10 @@ require("lazy").setup({
       require("plugins.oil")
     end,
   },
+  {
+    "benomahony/oil-git.nvim",
+    dependencies = { "stevearc/oil.nvim" },
+  },
 
   -- color scheme
   {
@@ -201,6 +209,15 @@ require("lazy").setup({
     end,
   },
 
+  -- window resize
+  {
+    "0xm4n/resize.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("plugins.resize")
+    end,
+  },
+
   -- preview
   { "kevinhwang91/nvim-bqf" },
 
@@ -215,21 +232,6 @@ require("lazy").setup({
       require("plugins.barbar")
     end,
     version = "^1.0.0",
-  },
-
-  -- copilot
-  { "github/copilot.vim" },
-  {
-    "CopilotC-Nvim/CopilotChat.nvim",
-    event = "VeryLazy",
-    dependencies = {
-      { "github/copilot.vim" },                    -- or zbirenbaum/copilot.lua
-      { "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
-    },
-    build = "make tiktoken",
-    config = function()
-      require("plugins.copilot-chat")
-    end,
   },
 
   -- display lsp loading state
@@ -247,6 +249,7 @@ require("lazy").setup({
       require("plugins.zen-mode")
     end,
   },
+
   -- claude
   {
     "greggh/claude-code.nvim",
@@ -254,4 +257,7 @@ require("lazy").setup({
       require("plugins.claude")
     end,
   },
+
+  -- copilot
+  { "github/copilot.vim" },
 })
