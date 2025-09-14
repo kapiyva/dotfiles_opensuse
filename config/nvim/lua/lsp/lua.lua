@@ -1,12 +1,23 @@
 local lsp = require("plugins.lspconfig")
--- local conform = require("plugins.conform")
 
 lsp.setup("lua_ls", {
-  format = function(args)
-    vim.lsp.buf.format({ async = false })
-    -- conform.format({
-    -- 	bufnr = args.bufnr,
-    -- 	timeout_ms = 1000,
-    -- })
-  end,
+  settings = {
+    Lua = {
+      runtime = {
+        version = "LuaJIT",
+      },
+      diagnostics = {
+        globals = { "vim" },
+      },
+      workspace = {
+        -- Neovimのランタイムファイルを読み込む
+        library = vim.api.nvim_get_runtime_file("", true),
+        -- サードパーティのライブラリチェックを無効化（パフォーマンス向上）
+        checkThirdParty = false,
+      },
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
 })

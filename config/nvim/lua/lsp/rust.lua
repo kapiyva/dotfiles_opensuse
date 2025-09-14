@@ -11,20 +11,10 @@ lsp.setup("rust_analyzer", {
         prefix = "self",
       },
       cargo = {
-        features = { "ssr", "hydrate" },
+        allFeatures = true,
       },
       checkOnSave = {
-        features = { "ssr", "hydrate" },
         command = "clippy",
-      },
-      procMacro = {
-        enable = true,
-        ignore = {
-          leptos_macro = {
-            "server",
-            "component",
-          },
-        },
       },
     },
   },
