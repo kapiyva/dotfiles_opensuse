@@ -27,8 +27,9 @@ words:
   - supabase
   - stylesheet
   - thiserror
+  - tauri
   - usecase
-  - usecase
+  - unlocker
   - valibot
   - vim
 flagWords:
