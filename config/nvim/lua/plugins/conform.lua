@@ -2,10 +2,10 @@ require("conform").setup({
   formatters_by_ft = {
     lua = { "stylua" },
     rust = { "leptosfmt", "rustfmt" },
-    javascript = { "prettier", "rustywind" },
-    typescript = { "prettier", "rustywind" },
-    javascriptreact = { "prettier", "rustywind" },
-    typescriptreact = { "prettier", "rustywind" },
+    javascript = { "prettier" },
+    typescript = { "prettier" },
+    javascriptreact = { "prettier" },
+    typescriptreact = { "prettier" },
   },
   format_on_save = {
     timeout_ms = 500,
