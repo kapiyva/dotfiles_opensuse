@@ -1,5 +1,3 @@
-background-opacity = 0.8
 keybind = shift+enter=text:\n
 font-family = "UDEV Gothic NF Regular"
 theme = "Everforest Dark - Hard"
-keybind = global:ctrl+space=toggle_quick_terminal
