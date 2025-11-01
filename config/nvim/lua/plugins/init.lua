@@ -246,6 +246,7 @@ require("lazy").setup({
   -- zen-mode
   {
     "folke/zen-mode.nvim",
+    event = "UIEnter",
     config = function()
       require("plugins.zen-mode")
     end,
@@ -254,6 +255,7 @@ require("lazy").setup({
   -- claude
   {
     "greggh/claude-code.nvim",
+    event = "UIEnter",
     config = function()
       require("plugins.claude")
     end,
