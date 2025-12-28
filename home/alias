@@ -1,11 +1,24 @@
+# system
+alias update='sudo zypper up -y'
+alias xremap='sudo systemctl restart xremap.service'
+alias xremap-fix='sudo systemctl daemon-reload && sudo systemctl start xremap.service'
+alias supabase-schema-update='npm run supabase db reset && npm run supabase db lint && npm run --silent supabase gen types typescript -s public --local > lib/supabase/.generated.ts && npx prettier -w .'
+
+# vim
 alias vi='nvim'
 alias vimconf='nvim -c "cd ~/dotfiles/config/nvim | e init.lua"'
+
+# eza
 alias ls='eza --icons'
 alias la='eza --icons --all'
 alias ll='eza --icons --all --long --group'
 alias lt='eza --icons --tree --git-ignore'
+
+# git
 alias lg='lazygit'
-alias update='sudo zypper up -y'
-alias xremap='sudo systemctl restart xremap.service'
-alias xremap-fix='sudo systemctl daemon-reload && sudo systemctl start xremap.service'
-alias supabase-schema-update='npm run supabase db reset && npm run supabase db lint && npm run --silent supabase gen types typescript -- --local > lib/supabase/.generated.ts && npx prettier -w .'
+alias gs='git status -s'
+alias ga='git add .'
+alias gc='git commit -m'
+alias gpsh='git push'
+alias gp='git pull'
+alias gd='git diff'
