@@ -1,19 +1,19 @@
 require("telescope").load_extension("media_files")
 
 require("telescope").setup({
-	defaults = {
-		file_ignore_patterns = { "node_modules", "venv", ".git" },
-		-- path_display = {'shorten'},
-	},
-	pickers = {
-		find_files = { hidden = true },
-	},
-	extentions = {
-		media_files = {
-			filetypes = { "png", "webp", "jpg", "jpeg" },
-			find_cmd = "rg",
-		},
-	},
+  defaults = {
+    file_ignore_patterns = { "node_modules", "venv", ".git" },
+    -- path_display = {'shorten'},
+  },
+  pickers = {
+    find_files = { hidden = true },
+  },
+  extentions = {
+    media_files = {
+      filetypes = { "png", "webp", "jpg", "jpeg" },
+      find_cmd = "rg",
+    },
+  },
 })
 
 local builtin = require("telescope.builtin")

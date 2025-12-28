@@ -31,6 +31,12 @@ require("lazy").setup({
       require("plugins.mason")
     end,
   },
+  -- typescript lsp extras
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {},
+  },
   -- linter
   {
     "mfussenegger/nvim-lint",
@@ -82,6 +88,15 @@ require("lazy").setup({
       require("plugins.nvim-cmp")
     end,
   },
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "nvim-neotest/nvim-nio",
+      { "theHamsta/nvim-dap-virtual-text", opts = {} },
+    },
+    opts = {},
+  },
 
   -- code outline window
   {
@@ -120,15 +135,6 @@ require("lazy").setup({
       require("plugins.treesitter")
     end,
   },
-
-  -- display context
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter-context",
-  -- 	event = "VeryLazy",
-  -- 	config = function()
-  -- 		require("plugins.nvim-treesitter-context")
-  -- 	end,
-  -- },
 
   -- file explorer
   {
@@ -222,6 +228,16 @@ require("lazy").setup({
   -- preview
   { "kevinhwang91/nvim-bqf" },
 
+  -- folding
+  {
+    "kevinhwang91/nvim-ufo",
+    event = "UIEnter",
+    dependencies = { "kevinhwang91/promise-async" },
+    config = function()
+      require("plugins.ufo")
+    end,
+  },
+
   -- buffer as tab and tab util
   {
     "romgrk/barbar.nvim",
@@ -249,15 +265,6 @@ require("lazy").setup({
     event = "UIEnter",
     config = function()
       require("plugins.zen-mode")
-    end,
-  },
-
-  -- claude
-  {
-    "greggh/claude-code.nvim",
-    event = "UIEnter",
-    config = function()
-      require("plugins.claude")
     end,
   },
 
