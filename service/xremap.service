@@ -1,8 +1,8 @@
 [Unit]
-Sescription = remap keys for happy keyboard life
+Description = remap keys for happy keyboard life
 
 [Service]
-ExecStart = /home/kapiyva/.cargo/bin/xremap /home/kapiyva/.config/xremap.yml
+ExecStart = /home/kapiyva/.local/bin/xremap /home/kapiyva/.config/xremap.yml --watch=device
 Restart = always
 User = root
 Group = root
