@@ -14,6 +14,7 @@ test -s ~/.alias && . ~/.alias || true
 export MYVIMRC="$HOME/.config/nvim/"
 export LANG="ja_JP.UTF-8"
 
+# devbox
 eval "$(devbox global shellenv --init-hook)"
 
 # starship
@@ -21,11 +22,6 @@ eval "$(starship init bash)"
 
 # neovim(lsp)
 export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
-
-# cargo
-. "$HOME/.cargo/env"
-# mise
-eval "$(/home/kapiyva/.local/bin/mise activate bash)"
 
 export PATH=~/.npm-global/bin:$PATH
 
