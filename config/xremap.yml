@@ -2,24 +2,46 @@ modmap:
   - name: Default
     remap:
       LeftCtrl: LeftAlt
-      Muhenkan: [LeftCtrl, Muhenkan]
-      LeftAlt: [LeftCtrl, Muhenkan]
+      Muhenkan:
+        held: LeftCtrl
+        alone: Muhenkan
+      LeftAlt:
+        held: LeftCtrl
+        alone: Muhenkan
       RightCtrl: RightAlt
-      Henkan: [RightCtrl, Henkan]
-      RightAlt: [RightCtrl, Henkan]
-      Space: [Shift_L, Space]
-      CapsLock: [CapsLock, Esc]
+      Henkan:
+        held: RightCtrl
+        alone: Henkan
+      RightAlt:
+        held: RightCtrl
+        alone: Henkan
+      Space:
+        held: Shift_L
+        alone: Space
+        free_hold: true
+      CapsLock:
+        held: CapsLock
+        alone: Esc
     device:
       not: ["Apple"]
   - name: Mac
     remap:
-      LeftMeta: [LeftCtrl, Muhenkan]
+      LeftMeta:
+        held: LeftCtrl
+        alone: Muhenkan
       LeftAlt: LeftMeta
       LeftCtrl: LeftAlt
-      RightMeta: [RightCtrl, Henkan]
+      RightMeta:
+        held: RightCtrl
+        alone: Henkan
       RightAlt: RightMeta
-      Space: [Shift_L, Space]
-      CapsLock: [CapsLock, Esc]
+      Space:
+        held: Shift_L
+        alone: Space
+        free_hold: true
+      CapsLock:
+        held: CapsLock
+        alone: Esc
     device:
       only: ["Apple"]
 virtual_modifiers:
