@@ -1,23 +1,20 @@
-# add repository
-sudo zypper ar https://download.opensuse.org/repositories/devel:/languages:/go/openSUSE_Factory/devel:languages:go.repo
-sudo zypper ref
+#!/bin/bash
 
-# install tools
-sudo zypper in -y --type pattern devel_basis
-sudo zypper in -y neovim
-sudo zypper in -y eza
-sudo zypper in -y bat
-sudo zypper in -y starship
-sudo zypper in -y ripgrep
-sudo zypper in -y lazygit
-sudo zypper in -y fd
+# Check if devbox is installed
+if ! command -v devbox &> /dev/null; then
+    echo "Error: devbox is not installed."
+    echo "Please install devbox first: https://www.jetify.com/devbox/docs/installing_devbox/"
+    exit 1
+fi
 
-# install mise
-curl https://mise.run | sh
-
-# install rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
+# Install tools via devbox global
+devbox global add neovim@latest
+devbox global add eza@latest
+devbox global add bat@latest
+devbox global add starship@latest
+devbox global add ripgrep@latest
+devbox global add lazygit@latest
+devbox global add fd@latest
 # deploy dotfiles
 mv ~/.bashrc ~/.bashrc_bk
 ln -s ~/dotfiles/home/bashrc ~/.bashrc
@@ -33,9 +30,6 @@ ln -s ~/dotfiles/config/nvim ~/.config/
 
 mv ~/.config/lazygit ~/.config/lazygit_bk
 ln -s ~/dotfiles/config/lazygit ~/.config/
-
-mv ~/.config/mise ~/.config/mise_bk
-ln -s ~/dotfiles/config/mise ~/.config/
 
 mv ~/.cspell.yaml ~/.cspell.yaml_bk
 ln -s ~/dotfiles/home/cspell.yaml ~/.cspell.yaml
