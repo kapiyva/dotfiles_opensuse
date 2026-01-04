@@ -15,6 +15,8 @@ devbox global add starship@latest
 devbox global add ripgrep@latest
 devbox global add lazygit@latest
 devbox global add fd@latest
+devbox global add zellij@latest
+
 # deploy dotfiles
 mv ~/.bashrc ~/.bashrc_bk
 ln -s ~/dotfiles/home/bashrc ~/.bashrc
