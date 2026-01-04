@@ -5,6 +5,7 @@ language: en
 words:
   - autocmd
   - chrono
+  - devbox
   - fkey
   - interactor
   - kagisuru
