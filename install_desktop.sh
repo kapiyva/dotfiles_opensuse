@@ -11,8 +11,13 @@ sudo systemctl enable ~/dotfiles/service/xremap.service
 # install alacritty
 sudo zypper in alacritty
 mkdir -p ~/.config/alacritty
-mv ~/.config/alacritty/config ~/.config/alacritty/config_bk
+mv ~/.config/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml.bk
 ln -s ~/dotfiles/config/alacritty.toml ~/.config/alacritty/alacritty.toml
+
+# setting zellij
+mkdir -p ~/.config/zellij
+mv ~/.config/zellij/config.kdl ~/.config/zellij/config.kdl.bk
+ln -s ~/dotfiles/config/zellij.kdl ~/.config/zellij/config.kdl
 
 # profile config
 echo "xinput set-button-map 'Kensington Expert Wireless TB Mouse' 1 8 3 4 5 6 7 9 10 11 12" >> ~/.profile
