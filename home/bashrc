@@ -14,8 +14,8 @@ test -s ~/.alias && . ~/.alias || true
 export MYVIMRC="$HOME/.config/nvim/"
 export LANG="ja_JP.UTF-8"
 
-# devbox
-eval "$(devbox global shellenv --init-hook)"
+# mise
+eval "$(~/.local/bin/mise activate bash)"
 
 # starship
 eval "$(starship init bash)"

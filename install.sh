@@ -1,21 +1,14 @@
 #!/bin/bash
 
-# Check if devbox is installed
-if ! command -v devbox &> /dev/null; then
-    echo "Error: devbox is not installed."
-    echo "Please install devbox first: https://www.jetify.com/devbox/docs/installing_devbox/"
-    exit 1
-fi
-
-# Install tools via devbox global
-devbox global add neovim@latest
-devbox global add eza@latest
-devbox global add bat@latest
-devbox global add starship@latest
-devbox global add ripgrep@latest
-devbox global add lazygit@latest
-devbox global add fd@latest
-devbox global add zellij@latest
+# Install tools via zypper for OpenSUSE Tumbleweed
+sudo zypper install -y \
+    neovim \
+    eza \
+    bat \
+    starship \
+    ripgrep \
+    lazygit \
+    fd
 
 # deploy dotfiles
 mv ~/.bashrc ~/.bashrc_bk

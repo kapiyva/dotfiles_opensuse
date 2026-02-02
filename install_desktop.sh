@@ -14,7 +14,8 @@ mkdir -p ~/.config/alacritty
 mv ~/.config/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml.bk
 ln -s ~/dotfiles/config/alacritty.toml ~/.config/alacritty/alacritty.toml
 
-# setting zellij
+# install and setting zellij
+sudo zypper install -y zellij
 mkdir -p ~/.config/zellij
 mv ~/.config/zellij/config.kdl ~/.config/zellij/config.kdl.bk
 ln -s ~/dotfiles/config/zellij.kdl ~/.config/zellij/config.kdl
