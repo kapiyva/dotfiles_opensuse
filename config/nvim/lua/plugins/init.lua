@@ -162,7 +162,7 @@ require("lazy").setup({
     lazy = false,
     opts = {},
     keys = {
-      { "<space>e", "<cmd>Fyler kind=float<cr>", desc = "Open fyler in floating window" },
+      { "<space>e", "<cmd>Fyler . kind=float<cr>", desc = "Open fyler in floating window" },
     },
   },
 
