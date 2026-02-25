@@ -19,3 +19,11 @@ vim.api.nvim_create_autocmd("TermOpen", {
 	command = "startinsert",
 })
 
+-- lazygitバッファではESCを本来の動作に戻す
+vim.api.nvim_create_autocmd("TermOpen", {
+	pattern = "*lazygit*",
+	callback = function()
+		vim.keymap.set("t", "<Esc>", "<Esc>", { buffer = true })
+	end,
+})
+
