@@ -142,6 +142,9 @@ require("lazy").setup({
     keys = {
       { "<space>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
     },
+    config = function()
+      require("plugins.lazygit")
+    end,
   },
   -- highlight
   {
@@ -155,14 +158,18 @@ require("lazy").setup({
 
   -- filer
   {
-    "A7Lavinraj/fyler.nvim",
-    dependencies = { "nvim-mini/mini.icons" },
-    branch = "stable",
-    -- Necessary for `default_explorer` to work properly
-    lazy = false,
-    opts = {},
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    },
+    config = function()
+      require("plugins.neo-tree")
+    end,
     keys = {
-      { "<space>e", "<cmd>Fyler . kind=float<cr>", desc = "Open fyler in floating window" },
+      { "<space>e", "<cmd>Neotree toggle<cr>", desc = "Toggle Neo-tree" },
     },
   },
 
@@ -281,9 +288,9 @@ require("lazy").setup({
     end,
   },
 
-  -- copilot
-  { "github/copilot.vim" },
-
+  -- -- copilot
+  -- { "github/copilot.vim" },
+  --
   -- ai terminal
   {
     "folke/sidekick.nvim",
