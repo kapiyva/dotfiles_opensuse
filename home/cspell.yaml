@@ -15,8 +15,10 @@ words:
   - lazygit
   - leptos
   - mockall
+  - neverthrow
   - nvim
   - pedy
+  - picklist
   - postgrest
   - posthog
   - ratatui
