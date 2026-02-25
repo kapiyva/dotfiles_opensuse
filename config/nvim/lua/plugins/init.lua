@@ -169,7 +169,7 @@ require("lazy").setup({
       require("plugins.neo-tree")
     end,
     keys = {
-      { "<space>e", "<cmd>Neotree toggle<cr>", desc = "Toggle Neo-tree" },
+      { "<space>e", "<cmd>Neotree focus<cr>", desc = "Focus Neo-tree" },
     },
   },
 
