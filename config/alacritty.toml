@@ -29,9 +29,9 @@ style = "Italic"
 opacity = 0.90
 # decorations = "None"
 
-[window.dimensions]
-columns = 140
-lines = 35
+# [window.dimensions]
+# columns = 140
+# lines = 35
 
 [window.padding]
 x = 4
