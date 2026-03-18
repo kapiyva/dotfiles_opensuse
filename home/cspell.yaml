@@ -17,6 +17,7 @@ words:
   - mockall
   - neverthrow
   - nvim
+  - oaep
   - pedy
   - picklist
   - postgrest
