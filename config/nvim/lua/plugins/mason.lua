@@ -6,6 +6,7 @@ require("mason-tool-installer").setup({
     "lua-language-server",
     "prettier",
     "prettierd",
+    "biome",
     "rust-analyzer",
     "stylua",
     "tailwindcss-language-server",
