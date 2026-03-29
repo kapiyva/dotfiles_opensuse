@@ -288,9 +288,13 @@ require("lazy").setup({
     end,
   },
 
-  -- -- copilot
-  -- { "github/copilot.vim" },
-  --
+  -- markdown render
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    ft = { "markdown" },
+  },
+
   -- ai terminal
   {
     "folke/sidekick.nvim",
