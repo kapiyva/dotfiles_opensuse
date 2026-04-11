@@ -32,10 +32,12 @@ words:
   - stylesheet
   - thiserror
   - tauri
+  - turso
   - usecase
   - unlocker
   - valibot
   - vim
+  - zettelkasten
 flagWords:
   - master
   - slave
