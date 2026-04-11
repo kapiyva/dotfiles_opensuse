@@ -20,6 +20,10 @@ eval "$(~/.local/bin/mise activate bash)"
 # starship
 eval "$(starship init bash)"
 
+# rust
+. "$HOME/.cargo/env"
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # neovim(lsp)
 export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
 
