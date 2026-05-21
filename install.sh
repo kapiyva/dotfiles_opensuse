@@ -8,7 +8,18 @@ sudo zypper install -y \
     starship \
     ripgrep \
     lazygit \
-    fd
+    zoxide \
+    fd \
+    sqlite3
+
+# install rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# install turso
+curl -sSfL https://get.tur.so/install.sh | bash
+
+# install doppler
+(curl -Ls --tlsv1.2 --proto "=https" --retry 3 https://cli.doppler.com/install.sh || wget -t 3 -qO- https://cli.doppler.com/install.sh) | sudo sh
 
 # deploy dotfiles
 mv ~/.bashrc ~/.bashrc_bk

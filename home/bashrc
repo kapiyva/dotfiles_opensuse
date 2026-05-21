@@ -20,6 +20,9 @@ eval "$(~/.local/bin/mise activate bash)"
 # starship
 eval "$(starship init bash)"
 
+# zoxide
+eval "$(zoxide init bash)"
+
 # rust
 . "$HOME/.cargo/env"
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -32,3 +35,6 @@ export PATH=~/.npm-global/bin:$PATH
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/home/kapiyva/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+# Turso
+export PATH="$PATH:/home/kapiyva/.turso"
