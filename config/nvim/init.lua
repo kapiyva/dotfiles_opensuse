@@ -1,14 +1,14 @@
 -- color theme, global key config, and others
 require("options")
 
+-- keyconfig
+require("keyconfig")
+
 -- plugins
 require("plugins")
 
 -- lsp
 require("lsp")
-
--- keyconfig
-require("keyconfig")
 
 -- load project config
 local function load_project_config()

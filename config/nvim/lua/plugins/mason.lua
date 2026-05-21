@@ -7,8 +7,8 @@ require("mason-tool-installer").setup({
     "prettier",
     "prettierd",
     "biome",
-    "rust-analyzer",
     "stylua",
+    "rust-analyzer",
     "tailwindcss-language-server",
     -- typescript-language-server is not needed as we use typescript-tools.nvim
   },
