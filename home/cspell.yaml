@@ -14,6 +14,7 @@ words:
   - kgsr
   - lazygit
   - leptos
+  - libsql
   - mockall
   - neverthrow
   - nvim
