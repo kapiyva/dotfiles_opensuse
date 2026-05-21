@@ -52,6 +52,6 @@ keymap:
       CapsLock-j: Down
       CapsLock-k: Up
       CapsLock-l: Right
-      CapsLock-s: C-SUPER-Alt-Left
-      CapsLock-d: SUPER-Q
-      CapsLock-f: C-SUPER-Alt-Right
+      # CapsLock-s: C-SUPER-Alt-Left
+      # CapsLock-d: SUPER-Q
+      # CapsLock-f: C-SUPER-Alt-Right
