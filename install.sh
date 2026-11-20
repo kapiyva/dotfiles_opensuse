@@ -1,6 +1,10 @@
 #!/bin/bash
+# Idempotent setup script: safe to run multiple times.
+set -euo pipefail
 
-# Install tools via zypper for OpenSUSE Tumbleweed
+DOTFILES="$HOME/dotfiles"
+
+# Install tools via zypper for OpenSUSE Tumbleweed (already-installed packages are skipped)
 sudo zypper install -y \
     neovim \
     eza \
@@ -12,34 +16,63 @@ sudo zypper install -y \
     fd \
     sqlite3
 
-# install rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# install mise
+if [ ! -x "$HOME/.local/bin/mise" ]; then
+    curl https://mise.run | sh
+fi
+
+# install rust (PATH is configured in home/bashrc, so don't let rustup modify it)
+if [ ! -x "$HOME/.cargo/bin/rustup" ]; then
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+fi
 
 # install turso
-curl -sSfL https://get.tur.so/install.sh | bash
+if [ ! -x "$HOME/.turso/turso" ]; then
+    curl -sSfL https://get.tur.so/install.sh | bash
+fi
 
 # install doppler
-(curl -Ls --tlsv1.2 --proto "=https" --retry 3 https://cli.doppler.com/install.sh || wget -t 3 -qO- https://cli.doppler.com/install.sh) | sudo sh
+if ! command -v doppler &> /dev/null; then
+    (curl -Ls --tlsv1.2 --proto "=https" --retry 3 https://cli.doppler.com/install.sh || wget -t 3 -qO- https://cli.doppler.com/install.sh) | sudo sh
+fi
+
+# link <src> <dst>
+# - does nothing if <dst> is already a symlink to <src>
+# - otherwise backs up an existing <dst> (never overwriting a previous backup) and creates the symlink
+link() {
+    local src="$1" dst="$2"
+
+    if [ -L "$dst" ] && [ "$(readlink "$dst")" = "$src" ]; then
+        return
+    fi
+
+    if [ -e "$dst" ] || [ -L "$dst" ]; then
+        local backup="${dst}_bk"
+        if [ -e "$backup" ] || [ -L "$backup" ]; then
+            backup="${dst}_bk.$(date +%Y%m%d%H%M%S)"
+        fi
+        mv "$dst" "$backup"
+        echo "backed up $dst -> $backup"
+    fi
+
+    mkdir -p "$(dirname "$dst")"
+    ln -sn "$src" "$dst"
+    echo "linked $dst -> $src"
+}
 
 # deploy dotfiles
-mv ~/.bashrc ~/.bashrc_bk
-ln -s ~/dotfiles/home/bashrc ~/.bashrc
+link "$DOTFILES/home/bashrc"      "$HOME/.bashrc"
+link "$DOTFILES/home/alias"       "$HOME/.alias"
+link "$DOTFILES/home/gitconfig"   "$HOME/.gitconfig"
+link "$DOTFILES/home/cspell.yaml" "$HOME/.cspell.yaml"
+link "$DOTFILES/config/nvim"      "$HOME/.config/nvim"
+link "$DOTFILES/config/lazygit"   "$HOME/.config/lazygit"
+link "$DOTFILES/config/mise"      "$HOME/.config/mise"
 
-mv ~/.alias ~/.alias_bk
-ln -s ~/dotfiles/home/alias ~/.alias
+# install tools managed by mise (node)
+"$HOME/.local/bin/mise" install
 
-mv ~/.gitconfig ~/.gitconfig_bk
-ln -s ~/dotfiles/home/gitconfig ~/.gitconfig
-
-mv ~/.config/nvim ~/.config/nvim_bk
-ln -s ~/dotfiles/config/nvim ~/.config/
-
-mv ~/.config/lazygit ~/.config/lazygit_bk
-ln -s ~/dotfiles/config/lazygit ~/.config/
-
-mv ~/.cspell.yaml ~/.cspell.yaml_bk
-ln -s ~/dotfiles/home/cspell.yaml ~/.cspell.yaml
-
-# install cspell
-source
-npm install -g cspell
+# install cspell (run via mise so this works without sourcing bashrc)
+if ! "$HOME/.local/bin/mise" exec -- cspell --version &> /dev/null; then
+    "$HOME/.local/bin/mise" exec -- npm install -g cspell
+fi
