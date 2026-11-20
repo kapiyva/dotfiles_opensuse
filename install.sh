@@ -3,6 +3,7 @@
 set -euo pipefail
 
 DOTFILES="$HOME/dotfiles"
+source "$(dirname "${BASH_SOURCE[0]}")/lib.sh"
 
 # Install tools via zypper for OpenSUSE Tumbleweed (already-installed packages are skipped)
 sudo zypper install -y \
@@ -35,30 +36,6 @@ fi
 if ! command -v doppler &> /dev/null; then
     (curl -Ls --tlsv1.2 --proto "=https" --retry 3 https://cli.doppler.com/install.sh || wget -t 3 -qO- https://cli.doppler.com/install.sh) | sudo sh
 fi
-
-# link <src> <dst>
-# - does nothing if <dst> is already a symlink to <src>
-# - otherwise backs up an existing <dst> (never overwriting a previous backup) and creates the symlink
-link() {
-    local src="$1" dst="$2"
-
-    if [ -L "$dst" ] && [ "$(readlink "$dst")" = "$src" ]; then
-        return
-    fi
-
-    if [ -e "$dst" ] || [ -L "$dst" ]; then
-        local backup="${dst}_bk"
-        if [ -e "$backup" ] || [ -L "$backup" ]; then
-            backup="${dst}_bk.$(date +%Y%m%d%H%M%S)"
-        fi
-        mv "$dst" "$backup"
-        echo "backed up $dst -> $backup"
-    fi
-
-    mkdir -p "$(dirname "$dst")"
-    ln -sn "$src" "$dst"
-    echo "linked $dst -> $src"
-}
 
 # deploy dotfiles
 link "$DOTFILES/home/bashrc"      "$HOME/.bashrc"
