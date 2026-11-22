@@ -2,7 +2,7 @@
 Description = remap keys for happy keyboard life
 
 [Service]
-ExecStart = /home/kapiyva/.local/bin/xremap /home/kapiyva/.config/xremap.yml --watch=device
+ExecStart = /usr/local/bin/xremap /home/kapiyva/.config/xremap.yml --watch=device
 Restart = always
 User = root
 Group = root

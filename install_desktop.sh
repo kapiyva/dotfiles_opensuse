@@ -7,26 +7,38 @@ source "$(dirname "${BASH_SOURCE[0]}")/lib.sh"
 
 # install desktop tools (already-installed packages are skipped)
 sudo zypper install -y \
-    alacritty \
-    zellij
+    alacritty
 
 # setting inputrc
 link "$DOTFILES/home/inputrc" "$HOME/.inputrc"
 
 # setting xremap
-if [ ! -x "$HOME/.local/bin/xremap" ]; then
-    echo "Please install xremap here: https://github.com/xremap/xremap"
-fi
+# SELinux (enforcing since Leap 16) blocks systemd from reading unit files or
+# executing binaries under $HOME, so copy both to system locations instead of linking.
 link "$DOTFILES/config/xremap.yml" "$HOME/.config/xremap.yml"
-if ! systemctl cat xremap.service &> /dev/null; then
-    sudo systemctl link "$DOTFILES/service/xremap.service"
+if [ -x "$HOME/.local/bin/xremap" ]; then
+    if ! cmp -s "$HOME/.local/bin/xremap" /usr/local/bin/xremap; then
+        sudo install -m 755 "$HOME/.local/bin/xremap" /usr/local/bin/xremap
+        sudo restorecon /usr/local/bin/xremap
+    fi
+    if [ -L /etc/systemd/system/xremap.service ] || ! cmp -s "$DOTFILES/service/xremap.service" /etc/systemd/system/xremap.service; then
+        sudo rm -f /etc/systemd/system/xremap.service /etc/systemd/system/default.target.wants/xremap.service
+        sudo install -m 644 "$DOTFILES/service/xremap.service" /etc/systemd/system/xremap.service
+        sudo restorecon /etc/systemd/system/xremap.service
+        sudo systemctl daemon-reload
+    fi
+    sudo systemctl enable xremap.service
+else
+    echo "Please install xremap to ~/.local/bin: https://github.com/xremap/xremap"
 fi
-sudo systemctl enable xremap.service
 
 # setting alacritty
 link "$DOTFILES/config/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
 
-# setting zellij
+# setting zellij (not packaged for Leap 16; use the release binary in ~/.local/bin)
+if [ ! -x "$HOME/.local/bin/zellij" ]; then
+    echo "Please install zellij to ~/.local/bin: https://github.com/zellij-org/zellij/releases"
+fi
 link "$DOTFILES/config/zellij.kdl" "$HOME/.config/zellij/config.kdl"
 
 # profile config
