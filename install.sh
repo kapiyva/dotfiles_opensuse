@@ -45,6 +45,7 @@ link "$DOTFILES/home/cspell.yaml" "$HOME/.cspell.yaml"
 link "$DOTFILES/config/nvim"      "$HOME/.config/nvim"
 link "$DOTFILES/config/lazygit"   "$HOME/.config/lazygit"
 link "$DOTFILES/config/mise"      "$HOME/.config/mise"
+link "$DOTFILES/config/starship.toml" "$HOME/.config/starship.toml"
 
 # install tools managed by mise (node)
 "$HOME/.local/bin/mise" install
