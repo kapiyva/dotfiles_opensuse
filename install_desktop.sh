@@ -32,6 +32,9 @@ else
     echo "Please install xremap to ~/.local/bin: https://github.com/xremap/xremap"
 fi
 
+# setting input method env for fcitx5 (flatpak) on Plasma Wayland
+link "$DOTFILES/config/plasma-env-fcitx5.sh" "$HOME/.config/plasma-workspace/env/fcitx5.sh"
+
 # setting alacritty
 link "$DOTFILES/config/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
 
