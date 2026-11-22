@@ -5,9 +5,18 @@ set -euo pipefail
 DOTFILES="$HOME/dotfiles"
 source "$(dirname "${BASH_SOURCE[0]}")/lib.sh"
 
-# install desktop tools (already-installed packages are skipped)
+# install build deps for alacritty (already-installed packages are skipped)
 sudo zypper install -y \
-    alacritty
+    cmake \
+    gcc-c++ \
+    pkgconf \
+    freetype2-devel \
+    fontconfig-devel \
+    libxcb-devel \
+    libxkbcommon-devel
+
+# install alacritty
+"$HOME/.cargo/bin/cargo" install --locked alacritty
 
 # setting inputrc
 link "$DOTFILES/home/inputrc" "$HOME/.inputrc"
